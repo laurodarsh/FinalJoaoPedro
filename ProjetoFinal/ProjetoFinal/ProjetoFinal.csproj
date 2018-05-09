@@ -52,8 +52,20 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\HomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HomeForm.Designer.cs">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HomeForm.resx">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,6 +74,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -76,8 +89,22 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <Folder Include="Classes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\userIcon %281%29.png" />
+    <None Include="Icons\seachIcon %281%29.png" />
+    <None Include="Icons\saveIcon %281%29.png" />
+    <None Include="Icons\productIcon %281%29.png" />
+    <None Include="Icons\multiple-users-silhouette_318-49546 %281%29.jpg" />
+    <None Include="Icons\editIcon %281%29.png" />
+    <None Include="Icons\download %281%29.png" />
+    <None Include="Icons\delete-sign %281%29.png" />
+    <None Include="Icons\categoryIcon %281%29.png" />
+    <None Include="Icons\backIcon %281%29.png" />
+    <None Include="Icons\addIcon %281%29.png" />
+    <None Include="Icons\301022-200 %281%29.png" />
     <Content Include="Icons\301022-200.png" />
     <Content Include="Icons\addIcon.png" />
     <Content Include="Icons\backIcon.png" />
