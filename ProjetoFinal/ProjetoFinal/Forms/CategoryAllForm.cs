@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProjetoFinal
+namespace ProjetoFinal.Forms
 {
-    public partial class Form1 : Form
+    public partial class CategoryAllForm : Form
     {
-        public Form1()
+        public CategoryAllForm()
         {
             InitializeComponent();
         }
