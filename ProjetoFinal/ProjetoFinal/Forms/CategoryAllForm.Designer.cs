@@ -60,9 +60,11 @@
             // 
             // pbxSearch
             // 
+            this.pbxSearch.Image = global::ProjetoFinal.Properties.Resources.seachIcon1;
             this.pbxSearch.Location = new System.Drawing.Point(188, 12);
             this.pbxSearch.Name = "pbxSearch";
             this.pbxSearch.Size = new System.Drawing.Size(27, 20);
+            this.pbxSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxSearch.TabIndex = 1;
             this.pbxSearch.TabStop = false;
             // 
@@ -77,29 +79,38 @@
             // pbxDelete
             // 
             this.pbxDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxDelete.Image = global::ProjetoFinal.Properties.Resources.delete_sign;
             this.pbxDelete.Location = new System.Drawing.Point(233, 221);
             this.pbxDelete.Name = "pbxDelete";
             this.pbxDelete.Size = new System.Drawing.Size(39, 28);
+            this.pbxDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxDelete.TabIndex = 4;
             this.pbxDelete.TabStop = false;
+            this.pbxDelete.Click += new System.EventHandler(this.pbxDelete_Click);
             // 
             // pbxAdd
             // 
             this.pbxAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxAdd.Image = global::ProjetoFinal.Properties.Resources.addIcon;
             this.pbxAdd.Location = new System.Drawing.Point(188, 221);
             this.pbxAdd.Name = "pbxAdd";
             this.pbxAdd.Size = new System.Drawing.Size(39, 28);
+            this.pbxAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxAdd.TabIndex = 5;
             this.pbxAdd.TabStop = false;
+            this.pbxAdd.Click += new System.EventHandler(this.pbxAdd_Click);
             // 
             // pbxBack
             // 
             this.pbxBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxBack.Image = global::ProjetoFinal.Properties.Resources.backIcon;
             this.pbxBack.Location = new System.Drawing.Point(12, 221);
             this.pbxBack.Name = "pbxBack";
             this.pbxBack.Size = new System.Drawing.Size(39, 28);
+            this.pbxBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxBack.TabIndex = 6;
             this.pbxBack.TabStop = false;
+            this.pbxBack.Click += new System.EventHandler(this.pbxBack_Click);
             // 
             // CategoryAllForm
             // 

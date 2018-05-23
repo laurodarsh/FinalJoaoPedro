@@ -16,5 +16,12 @@ namespace ProjetoFinal.Forms
         {
             InitializeComponent();
         }
+
+        private void pbxBack_Click(object sender, EventArgs e)
+        {
+            CategoryAllForm ca = new CategoryAllForm();
+            ca.Show();
+            this.Hide();
+        }
     }
 }

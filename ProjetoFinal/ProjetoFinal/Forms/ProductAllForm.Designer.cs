@@ -88,7 +88,7 @@
             // 
             // pbxDelete
             // 
-            this.pbxDelete.BackgroundImage = global::ProjetoFinal.Properties.Resources.delete_sign;
+            this.pbxDelete.BackgroundImage = global::ProjetoFinal.Properties.Resources.addIcon;
             this.pbxDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbxDelete.Location = new System.Drawing.Point(233, 221);
             this.pbxDelete.Name = "pbxDelete";

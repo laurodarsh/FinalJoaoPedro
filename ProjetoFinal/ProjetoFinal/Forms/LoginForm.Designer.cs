@@ -76,6 +76,7 @@
             this.lblSignIn.TabIndex = 4;
             this.lblSignIn.Text = "Entrar";
             this.lblSignIn.UseVisualStyleBackColor = true;
+            this.lblSignIn.Click += new System.EventHandler(this.lblSignIn_Click);
             // 
             // lblForgot
             // 

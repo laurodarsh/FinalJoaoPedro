@@ -86,7 +86,7 @@
             // 
             // pbxSave
             // 
-            this.pbxSave.Image = global::ProjetoFinal.Properties.Resources.saveIcon;
+            this.pbxSave.Image = global::ProjetoFinal.Properties.Resources.addIcon;
             this.pbxSave.Location = new System.Drawing.Point(172, 221);
             this.pbxSave.Name = "pbxSave";
             this.pbxSave.Size = new System.Drawing.Size(45, 28);
@@ -96,6 +96,7 @@
             // 
             // pbxBack
             // 
+            this.pbxBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbxBack.Image = global::ProjetoFinal.Properties.Resources.backIcon;
             this.pbxBack.Location = new System.Drawing.Point(12, 221);
             this.pbxBack.Name = "pbxBack";
@@ -103,6 +104,7 @@
             this.pbxBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxBack.TabIndex = 4;
             this.pbxBack.TabStop = false;
+            this.pbxBack.Click += new System.EventHandler(this.pbxBack_Click);
             // 
             // CategoryDetailsForm
             // 
