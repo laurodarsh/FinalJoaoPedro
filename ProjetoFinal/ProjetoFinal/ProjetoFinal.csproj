@@ -154,18 +154,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -177,18 +177,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <None Include="Icons\userIcon %281%29.png" />
-    <None Include="Icons\seachIcon %281%29.png" />
-    <None Include="Icons\saveIcon %281%29.png" />
-    <None Include="Icons\productIcon %281%29.png" />
-    <None Include="Icons\multiple-users-silhouette_318-49546 %281%29.jpg" />
-    <None Include="Icons\editIcon %281%29.png" />
-    <None Include="Icons\download %281%29.png" />
-    <None Include="Icons\delete-sign %281%29.png" />
-    <None Include="Icons\categoryIcon %281%29.png" />
-    <None Include="Icons\backIcon %281%29.png" />
-    <None Include="Icons\addIcon %281%29.png" />
-    <None Include="Icons\301022-200 %281%29.png" />
     <Content Include="Icons\301022-200.png" />
     <Content Include="Icons\addIcon.png" />
     <Content Include="Icons\backIcon.png" />

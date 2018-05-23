@@ -60,8 +60,6 @@
             // 
             // pbxSearch
             // 
-            this.pbxSearch.BackgroundImage = global::ProjetoFinal.Properties.Resources.seachIcon;
-            this.pbxSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbxSearch.Location = new System.Drawing.Point(188, 12);
             this.pbxSearch.Name = "pbxSearch";
             this.pbxSearch.Size = new System.Drawing.Size(27, 20);
@@ -78,7 +76,6 @@
             // 
             // pbxDelete
             // 
-            this.pbxDelete.BackgroundImage = global::ProjetoFinal.Properties.Resources.delete_sign;
             this.pbxDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbxDelete.Location = new System.Drawing.Point(233, 221);
             this.pbxDelete.Name = "pbxDelete";
@@ -88,7 +85,6 @@
             // 
             // pbxAdd
             // 
-            this.pbxAdd.BackgroundImage = global::ProjetoFinal.Properties.Resources.addIcon;
             this.pbxAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbxAdd.Location = new System.Drawing.Point(188, 221);
             this.pbxAdd.Name = "pbxAdd";
@@ -98,7 +94,6 @@
             // 
             // pbxBack
             // 
-            this.pbxBack.BackgroundImage = global::ProjetoFinal.Properties.Resources.backIcon;
             this.pbxBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbxBack.Location = new System.Drawing.Point(12, 221);
             this.pbxBack.Name = "pbxBack";
