@@ -100,6 +100,7 @@
             // 
             // pbxDelete
             // 
+            this.pbxDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxDelete.Image = global::ProjetoFinal.Properties.Resources.delete_sign;
             this.pbxDelete.Location = new System.Drawing.Point(186, 197);
             this.pbxDelete.Name = "pbxDelete";
@@ -110,6 +111,7 @@
             // 
             // pbxSave
             // 
+            this.pbxSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxSave.Image = global::ProjetoFinal.Properties.Resources.saveIcon;
             this.pbxSave.Location = new System.Drawing.Point(91, 197);
             this.pbxSave.Name = "pbxSave";
@@ -120,6 +122,7 @@
             // 
             // pbxBack
             // 
+            this.pbxBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxBack.Image = global::ProjetoFinal.Properties.Resources.backIcon;
             this.pbxBack.Location = new System.Drawing.Point(-1, 197);
             this.pbxBack.Name = "pbxBack";
@@ -127,6 +130,7 @@
             this.pbxBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxBack.TabIndex = 19;
             this.pbxBack.TabStop = false;
+            this.pbxBack.Click += new System.EventHandler(this.pbxBack_Click);
             // 
             // lblPass
             // 
@@ -197,6 +201,7 @@
             this.Controls.Add(this.lblActive);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblName);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "UserDetailsForm";
             this.Text = "UserDetailsForm";
             ((System.ComponentModel.ISupportInitialize)(this.pbxDelete)).EndInit();

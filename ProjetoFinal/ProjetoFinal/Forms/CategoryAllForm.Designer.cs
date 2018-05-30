@@ -35,11 +35,13 @@
             this.pbxDelete = new System.Windows.Forms.PictureBox();
             this.pbxAdd = new System.Windows.Forms.PictureBox();
             this.pbxBack = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tbxSearch
@@ -60,6 +62,7 @@
             // 
             // pbxSearch
             // 
+            this.pbxSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxSearch.Image = global::ProjetoFinal.Properties.Resources.seachIcon1;
             this.pbxSearch.Location = new System.Drawing.Point(188, 12);
             this.pbxSearch.Name = "pbxSearch";
@@ -79,6 +82,7 @@
             // pbxDelete
             // 
             this.pbxDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxDelete.Image = global::ProjetoFinal.Properties.Resources.delete_sign;
             this.pbxDelete.Location = new System.Drawing.Point(233, 221);
             this.pbxDelete.Name = "pbxDelete";
@@ -91,6 +95,7 @@
             // pbxAdd
             // 
             this.pbxAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxAdd.Image = global::ProjetoFinal.Properties.Resources.addIcon;
             this.pbxAdd.Location = new System.Drawing.Point(188, 221);
             this.pbxAdd.Name = "pbxAdd";
@@ -103,6 +108,7 @@
             // pbxBack
             // 
             this.pbxBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxBack.Image = global::ProjetoFinal.Properties.Resources.backIcon;
             this.pbxBack.Location = new System.Drawing.Point(12, 221);
             this.pbxBack.Name = "pbxBack";
@@ -112,11 +118,24 @@
             this.pbxBack.TabStop = false;
             this.pbxBack.Click += new System.EventHandler(this.pbxBack_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::ProjetoFinal.Properties.Resources.editIcon;
+            this.pictureBox1.Location = new System.Drawing.Point(143, 221);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(39, 28);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // CategoryAllForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pbxBack);
             this.Controls.Add(this.pbxAdd);
             this.Controls.Add(this.pbxDelete);
@@ -124,13 +143,16 @@
             this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.pbxSearch);
             this.Controls.Add(this.tbxSearch);
+            this.KeyPreview = true;
             this.Name = "CategoryAllForm";
-            this.Text = "CategoryAllForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Categoria";
             ((System.ComponentModel.ISupportInitialize)(this.pbxSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAdd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,5 +167,6 @@
         private System.Windows.Forms.PictureBox pbxDelete;
         private System.Windows.Forms.PictureBox pbxAdd;
         private System.Windows.Forms.PictureBox pbxBack;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

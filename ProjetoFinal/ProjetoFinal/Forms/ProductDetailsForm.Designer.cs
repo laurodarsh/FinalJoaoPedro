@@ -46,6 +46,7 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = global::ProjetoFinal.Properties.Resources.delete_sign;
             this.pictureBox3.Location = new System.Drawing.Point(186, 197);
             this.pictureBox3.Name = "pictureBox3";
@@ -56,6 +57,7 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = global::ProjetoFinal.Properties.Resources.saveIcon;
             this.pictureBox2.Location = new System.Drawing.Point(91, 197);
             this.pictureBox2.Name = "pictureBox2";
@@ -66,6 +68,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::ProjetoFinal.Properties.Resources.backIcon;
             this.pictureBox1.Location = new System.Drawing.Point(-1, 197);
             this.pictureBox1.Name = "pictureBox1";
@@ -73,6 +76,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // cbxActive
             // 
@@ -157,6 +161,7 @@
             this.Controls.Add(this.lblCategory);
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.lblName);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "ProductDetailsForm";
             this.Text = "ProductDetailsForm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

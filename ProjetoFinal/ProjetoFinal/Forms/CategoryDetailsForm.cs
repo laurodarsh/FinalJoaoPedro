@@ -23,5 +23,16 @@ namespace ProjetoFinal.Forms
             ca.Show();
             this.Hide();
         }
+
+        private void pbxSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbxDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

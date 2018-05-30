@@ -17,5 +17,11 @@ namespace ProjetoFinal.Forms
             InitializeComponent();
         }
 
+        private void pbxBack_Click(object sender, EventArgs e)
+        {
+            UserAllForm ua = new UserAllForm();
+            ua.Show();
+            this.Hide();
+        }
     }
 }

@@ -70,6 +70,7 @@
             // 
             // lblSignIn
             // 
+            this.lblSignIn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblSignIn.Location = new System.Drawing.Point(34, 115);
             this.lblSignIn.Name = "lblSignIn";
             this.lblSignIn.Size = new System.Drawing.Size(75, 38);
@@ -80,6 +81,7 @@
             // 
             // lblForgot
             // 
+            this.lblForgot.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblForgot.Location = new System.Drawing.Point(140, 115);
             this.lblForgot.Name = "lblForgot";
             this.lblForgot.Size = new System.Drawing.Size(75, 38);

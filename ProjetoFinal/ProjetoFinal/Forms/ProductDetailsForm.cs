@@ -16,5 +16,12 @@ namespace ProjetoFinal.Forms
         {
             InitializeComponent();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            ProductAllForm pa = new ProductAllForm();
+            pa.Show();
+            this.Hide();
+        }
     }
 }
