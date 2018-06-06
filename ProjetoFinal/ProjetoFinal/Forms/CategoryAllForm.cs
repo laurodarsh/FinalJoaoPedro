@@ -35,5 +35,12 @@ namespace ProjetoFinal.Forms
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            CategoryDetailsForm cd = new CategoryDetailsForm();
+            cd.Show();
+            this.Hide();
+        }
     }
 }
