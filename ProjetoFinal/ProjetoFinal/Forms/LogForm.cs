@@ -16,5 +16,12 @@ namespace ProjetoFinal.Forms
         {
             InitializeComponent();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            HomeForm hf = new HomeForm();
+            hf.Show();
+            this.Hide();
+        }
     }
 }

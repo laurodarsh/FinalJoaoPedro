@@ -86,13 +86,14 @@
             // 
             // pbxSave
             // 
-            this.pbxSave.Image = global::ProjetoFinal.Properties.Resources.addIcon;
+            this.pbxSave.Image = global::ProjetoFinal.Properties.Resources.saveIcon;
             this.pbxSave.Location = new System.Drawing.Point(172, 221);
             this.pbxSave.Name = "pbxSave";
             this.pbxSave.Size = new System.Drawing.Size(45, 28);
             this.pbxSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxSave.TabIndex = 5;
             this.pbxSave.TabStop = false;
+            this.pbxSave.Click += new System.EventHandler(this.pbxSave_Click);
             // 
             // pbxBack
             // 

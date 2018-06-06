@@ -33,13 +33,13 @@
             this.tbxSearch = new System.Windows.Forms.TextBox();
             this.pbxBack = new System.Windows.Forms.PictureBox();
             this.pbxAdd = new System.Windows.Forms.PictureBox();
-            this.pbxDelete = new System.Windows.Forms.PictureBox();
             this.pbxSearch = new System.Windows.Forms.PictureBox();
+            this.pbxDelete = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAdd)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDelete)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvProduct
@@ -75,6 +75,7 @@
             this.pbxBack.Size = new System.Drawing.Size(39, 28);
             this.pbxBack.TabIndex = 13;
             this.pbxBack.TabStop = false;
+            this.pbxBack.Click += new System.EventHandler(this.pbxBack_Click);
             // 
             // pbxAdd
             // 
@@ -85,16 +86,7 @@
             this.pbxAdd.Size = new System.Drawing.Size(39, 28);
             this.pbxAdd.TabIndex = 12;
             this.pbxAdd.TabStop = false;
-            // 
-            // pbxDelete
-            // 
-            this.pbxDelete.BackgroundImage = global::ProjetoFinal.Properties.Resources.addIcon;
-            this.pbxDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbxDelete.Location = new System.Drawing.Point(233, 221);
-            this.pbxDelete.Name = "pbxDelete";
-            this.pbxDelete.Size = new System.Drawing.Size(39, 28);
-            this.pbxDelete.TabIndex = 11;
-            this.pbxDelete.TabStop = false;
+            this.pbxAdd.Click += new System.EventHandler(this.pbxAdd_Click);
             // 
             // pbxSearch
             // 
@@ -106,14 +98,25 @@
             this.pbxSearch.TabIndex = 8;
             this.pbxSearch.TabStop = false;
             // 
+            // pbxDelete
+            // 
+            this.pbxDelete.Image = global::ProjetoFinal.Properties.Resources.delete_sign;
+            this.pbxDelete.Location = new System.Drawing.Point(233, 221);
+            this.pbxDelete.Name = "pbxDelete";
+            this.pbxDelete.Size = new System.Drawing.Size(39, 28);
+            this.pbxDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxDelete.TabIndex = 14;
+            this.pbxDelete.TabStop = false;
+            this.pbxDelete.Click += new System.EventHandler(this.pbxDelete_Click);
+            // 
             // ProductAllForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.pbxDelete);
             this.Controls.Add(this.pbxBack);
             this.Controls.Add(this.pbxAdd);
-            this.Controls.Add(this.pbxDelete);
             this.Controls.Add(this.dgvProduct);
             this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.pbxSearch);
@@ -123,8 +126,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAdd)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDelete)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,10 +137,10 @@
 
         private System.Windows.Forms.PictureBox pbxBack;
         private System.Windows.Forms.PictureBox pbxAdd;
-        private System.Windows.Forms.PictureBox pbxDelete;
         private System.Windows.Forms.DataGridView dgvProduct;
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.PictureBox pbxSearch;
         private System.Windows.Forms.TextBox tbxSearch;
+        private System.Windows.Forms.PictureBox pbxDelete;
     }
 }
