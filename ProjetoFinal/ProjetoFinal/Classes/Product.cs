@@ -88,6 +88,7 @@ namespace ProjetoFinal.Classes
             this.Price = price;
             this.Category = category;
             this.Active = active;
+            
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetoFinal.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,7 @@ namespace ProjetoFinal.Forms
 {
     public partial class ProductDetailsForm : Form
     {
+        List<Category> categories = new List<Category>();
         string connectionString = "workstation id=StockControl.mssql.somee.com;packet size = 4096; user id = luacademy_SQLLogin_1; pwd=msctq6gvt3;data source = StockControl.mssql.somee.com; persist security info=False;initial catalog = StockControl";
         string name ="";
         string category="";
@@ -21,7 +23,9 @@ namespace ProjetoFinal.Forms
         public ProductDetailsForm()
         {
             InitializeComponent();
-            cmbCategory.Items.Add("Selecionar Produto");
+            cmbCategory.Items.Add("Selecionar Categoria");
+            cmbCategory.DisplayMember = "NAME";
+            LoadComboBox();
         }
 
         private void pbxSave_Click(object sender, EventArgs e)
@@ -30,30 +34,37 @@ namespace ProjetoFinal.Forms
             try
             {
                 GetData();
+
+                //Conectar
                 sqlConnect.Open();
-                string sql = "INSERT INTO PRODUCT(NAME, ACTIVE, PRICE) VALUES (@name, @active, @price)";
+                string sql = "INSERT INTO PRODUCT(NAME, PRICE, ACTIVE, FK_CATEGORY) VALUES (@name, @price, @active, @category)";
 
                 SqlCommand cmd = new SqlCommand(sql, sqlConnect);
 
                 cmd.Parameters.Add(new SqlParameter("@name", name));
-                cmd.Parameters.Add(new SqlParameter("@active", active));
                 cmd.Parameters.Add(new SqlParameter("@price", price));
-
+                cmd.Parameters.Add(new SqlParameter("@category", ((Category)cmbCategory.SelectedItem).Id));
+                cmd.Parameters.Add(new SqlParameter("@active", active));
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Adicionado com sucesso!");
                 CleanData();
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao adicionar categoria!" + ex.Message);
+                //Tratar exceções
+                MessageBox.Show("Erro ao adicionar Produto!" + ex.Message);
                 CleanData();
             }
             finally
             {
+                //Fechar
                 sqlConnect.Close();
+
             }
-            }
+
+        }
         void GetData()
         {
             name = tbxName.Text;
@@ -90,11 +101,39 @@ namespace ProjetoFinal.Forms
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        void LoadComboBox()
         {
-            ProductAllForm pa = new ProductAllForm();
-            pa.Show();
-            this.Hide();
+            SqlConnection cn = new SqlConnection(connectionString);
+
+            try
+            {
+                cn.Open();
+                SqlCommand sqlCommand = new SqlCommand("SELECT * FROM CATEGORY", cn);
+
+                SqlDataReader reader = sqlCommand.ExecuteReader();
+                while (reader.Read())
+                {
+                    Category c = new Category(reader["NAME"].ToString(), bool.Parse(reader["ACTIVE"].ToString()));
+                    categories.Add(c);
+                }
+            }
+            catch (Exception ex)
+            {
+                //Erro ao carregar banco
+            }
+            finally
+            {
+                cn.Close();
+            }
+            foreach (Category c in categories)
+            {
+                cmbCategory.Items.Add(c);
+            }
+        }
+
+        private void pbxSave_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

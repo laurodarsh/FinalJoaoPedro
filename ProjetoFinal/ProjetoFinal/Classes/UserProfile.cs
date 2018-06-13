@@ -60,5 +60,11 @@ namespace ProjetoFinal.Classes
             this.Name = name;
             this.Active = active;
         }
+        public UserProfile(string name, bool active, int id)
+        {
+            this.Name = name;
+            this.Active = active;
+            this.Id = id;
+        }
     }
 }
