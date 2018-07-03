@@ -146,7 +146,6 @@
             this.Controls.Add(this.pbxSearch);
             this.Controls.Add(this.tbxSearch);
             this.Name = "ProductAllForm";
-            this.Text = "ProductAllForm";
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAdd)).EndInit();
