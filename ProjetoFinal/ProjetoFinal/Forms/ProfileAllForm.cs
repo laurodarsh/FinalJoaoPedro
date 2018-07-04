@@ -77,7 +77,7 @@ namespace ProjetoFinal.Forms
         }
         private void ResizeDataGridView()
         {
-            dgvProfile.Columns["ID"].Visible = false;
+             dgvProfile.Columns["ID"].Visible = false;
             dgvProfile.Columns["NAME"].HeaderText = "Nome";
             dgvProfile.Columns["ACTIVE"].HeaderText = "Ativo";
 
@@ -86,6 +86,17 @@ namespace ProjetoFinal.Forms
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 col.HeaderCell.Style.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Pixel);
             }
+        }
+
+        private void pbxSearch_Click(object sender, EventArgs e)
+        {/*
+            string optionForm = "UserForm";
+            string optionString = "name";
+
+            Search search = new Search();
+            dgvProfile.DataSource = search.SearchFilter(connectionString, tbxSearch.Text, optionString, optionForm);
+
+            tbxSearch.Text = "";*/
         }
     }
 }

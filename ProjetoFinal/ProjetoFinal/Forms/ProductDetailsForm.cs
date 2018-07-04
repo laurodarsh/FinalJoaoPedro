@@ -15,7 +15,7 @@ namespace ProjetoFinal.Forms
     public partial class ProductDetailsForm : Form
     {
         List<Category> categories = new List<Category>();
-        string connectionString = "workstation id=StockControl.mssql.somee.com;packet size = 4096; user id = luacademy_SQLLogin_1; pwd=msctq6gvt3;data source = StockControl.mssql.somee.com; persist security info=False;initial catalog = StockControl";
+        string connectionString = "workstation id=StockControlData.mssql.somee.com;packet size=4096;user id=luacademy_SQLLogin_1;pwd=msctq6gvt3;data source=StockControlData.mssql.somee.com;persist security info=False;initial catalog=StockControlData";
         string name ="";
         string category="";
         float price = 0;
@@ -31,38 +31,38 @@ namespace ProjetoFinal.Forms
         private void pbxSave_Click(object sender, EventArgs e)
         {
             SqlConnection sqlConnect = new SqlConnection(connectionString);
-            try
-            {
-                GetData();
+                try
+                {
+                    GetData();
 
-                //Conectar
-                sqlConnect.Open();
-                string sql = "INSERT INTO PRODUCT(NAME, PRICE, ACTIVE, FK_CATEGORY) VALUES (@name, @price, @active, @category)";
+                    //Conectar
+                    sqlConnect.Open();
+                    string sql = "INSERT INTO PRODUCT(NAME, PRICE, ACTIVE, FK_PRODUCT) VALUES (@name, @price, @active, @category)";
 
-                SqlCommand cmd = new SqlCommand(sql, sqlConnect);
+                    SqlCommand cmd = new SqlCommand(sql, sqlConnect);
 
-                cmd.Parameters.Add(new SqlParameter("@name", name));
-                cmd.Parameters.Add(new SqlParameter("@price", price));
-                cmd.Parameters.Add(new SqlParameter("@category", ((Category)cmbCategory.SelectedItem).Id));
-                cmd.Parameters.Add(new SqlParameter("@active", active));
-                cmd.ExecuteNonQuery();
+                    cmd.Parameters.Add(new SqlParameter("@name", name));
+                    cmd.Parameters.Add(new SqlParameter("@price", price));
+                    cmd.Parameters.Add(new SqlParameter("@active", active));
+                    cmd.Parameters.Add(new SqlParameter("@category",((Category)cmbCategory.SelectedItem).Id));
+                    cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Adicionado com sucesso!");
-                CleanData();
-
-            }
-            catch (Exception ex)
-            {
-                //Tratar exceções
-                MessageBox.Show("Erro ao adicionar Produto!" + ex.Message);
-                CleanData();
-            }
-            finally
-            {
-                //Fechar
-                sqlConnect.Close();
-
-            }
+                    MessageBox.Show("Adicionado com sucesso!");
+                    CleanData();
+                 
+                }
+                catch (Exception ex)
+                {
+                    //Tratar exceções
+                    MessageBox.Show("Erro ao adicionar categoria!" + ex.Message);
+                    CleanData();
+                }
+                finally
+                {
+                    //Fechar
+                    sqlConnect.Close();
+                   
+                }
 
         }
         void GetData()
@@ -91,7 +91,7 @@ namespace ProjetoFinal.Forms
 
         private void pbxBack_Click(object sender, EventArgs e)
         {
-            ProfileAllForm pa = new ProfileAllForm();
+            ProductAllForm pa = new ProductAllForm();
             pa.Show();
             this.Hide();
         }
@@ -129,11 +129,6 @@ namespace ProjetoFinal.Forms
             {
                 cmbCategory.Items.Add(c);
             }
-        }
-
-        private void pbxSave_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

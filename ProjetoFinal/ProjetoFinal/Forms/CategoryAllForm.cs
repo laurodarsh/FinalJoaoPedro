@@ -42,9 +42,12 @@ namespace ProjetoFinal.Forms
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            CategoryDetailsForm cd = new CategoryDetailsForm();
-            cd.Show();
-            this.Hide();
+           int idCategory = Int32.Parse(dgvCategory.SelectedRows[0].Cells[0].Value.ToString());
+
+            CategoryDetailsForm categoryDetails = new CategoryDetailsForm(idCategory);
+            categoryDetails.Show();
+
+            this.Close();
         }
         private void ShowData()
         {
@@ -85,6 +88,18 @@ namespace ProjetoFinal.Forms
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 col.HeaderCell.Style.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Pixel);
             }
+        }
+
+        private void pbxSearch_Click(object sender, EventArgs e)
+        {
+            /*    string optionForm = "UserForm";
+                string optionString = "name";
+
+                Search search = new Search();
+                dgvCategory.DataSource = search.SearchFilter(connectionString, tbxSearch.Text, optionString, optionForm);
+
+                tbxSearch.Text = "";
+            */
         }
     }
 }

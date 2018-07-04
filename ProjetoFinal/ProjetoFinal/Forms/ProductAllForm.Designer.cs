@@ -107,6 +107,7 @@
             this.pbxSearch.Size = new System.Drawing.Size(27, 20);
             this.pbxSearch.TabIndex = 8;
             this.pbxSearch.TabStop = false;
+            this.pbxSearch.Click += new System.EventHandler(this.pbxSearch_Click);
             // 
             // pbxDelete
             // 

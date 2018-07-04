@@ -35,13 +35,13 @@
             this.pbxDelete = new System.Windows.Forms.PictureBox();
             this.pbxAdd = new System.Windows.Forms.PictureBox();
             this.pbxBack = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbxEdit = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBack)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEdit)).BeginInit();
             this.SuspendLayout();
             // 
             // tbxSearch
@@ -70,6 +70,7 @@
             this.pbxSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxSearch.TabIndex = 1;
             this.pbxSearch.TabStop = false;
+            this.pbxSearch.Click += new System.EventHandler(this.pbxSearch_Click);
             // 
             // dgvCategory
             // 
@@ -123,24 +124,24 @@
             this.pbxBack.TabStop = false;
             this.pbxBack.Click += new System.EventHandler(this.pbxBack_Click);
             // 
-            // pictureBox1
+            // pbxEdit
             // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::ProjetoFinal.Properties.Resources.editIcon;
-            this.pictureBox1.Location = new System.Drawing.Point(143, 221);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(39, 28);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pbxEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxEdit.Image = global::ProjetoFinal.Properties.Resources.editIcon;
+            this.pbxEdit.Location = new System.Drawing.Point(143, 221);
+            this.pbxEdit.Name = "pbxEdit";
+            this.pbxEdit.Size = new System.Drawing.Size(39, 28);
+            this.pbxEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxEdit.TabIndex = 7;
+            this.pbxEdit.TabStop = false;
+            this.pbxEdit.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // CategoryAllForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbxEdit);
             this.Controls.Add(this.pbxBack);
             this.Controls.Add(this.pbxAdd);
             this.Controls.Add(this.pbxDelete);
@@ -157,7 +158,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAdd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBack)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxEdit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,6 +173,6 @@
         private System.Windows.Forms.PictureBox pbxDelete;
         private System.Windows.Forms.PictureBox pbxAdd;
         private System.Windows.Forms.PictureBox pbxBack;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbxEdit;
     }
 }

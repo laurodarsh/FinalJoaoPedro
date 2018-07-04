@@ -18,7 +18,7 @@ namespace ProjetoFinal.Forms
         {
             InitializeComponent();
             ShowData();
-            //ResizeDataGridView();
+            ResizeDataGridView();
         }
 
         private void pbxBack_Click(object sender, EventArgs e)
@@ -30,7 +30,33 @@ namespace ProjetoFinal.Forms
 
         private void pbxDelete_Click(object sender, EventArgs e)
         {
+            int idProduct = Int32.Parse(dgvProduct.SelectedRows[0].Cells[0].Value.ToString());
 
+            SqlConnection sqlConnect = new SqlConnection(connectionString);
+
+            try
+            {
+                sqlConnect.Open();
+                string sql = "UPDATE PRODUCT SET ACTIVE = @active WHERE ID = @id";
+
+                SqlCommand cmd = new SqlCommand(sql, sqlConnect);
+
+                cmd.Parameters.Add(new SqlParameter("@id", idProduct));
+                cmd.Parameters.Add(new SqlParameter("@active", false));
+
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Produto inativo!");
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show("Erro ao editar este produto!" + "\n\n" + Ex.Message);
+                throw;
+            }
+            finally
+            {
+                sqlConnect.Close();
+            }
         }
 
         private void pbxAdd_Click(object sender, EventArgs e)
@@ -74,17 +100,30 @@ namespace ProjetoFinal.Forms
                 sqlConnect.Close();
             }
         }
-        /*private void ResizeDataGridView()
-        {
+        private void ResizeDataGridView()
+        {/*
             dgvProduct.Columns["ID"].Visible = false;
-            dgvProduct.Columns["NAME"].HeaderText = "Nome";
             dgvProduct.Columns["ACTIVE"].HeaderText = "Ativo";
+            dgvProduct.Columns["ACTIVE"].DisplayIndex = 4;
+            dgvProduct.Columns["NAME1"].HeaderText = "Categoria";
+            dgvProduct.Columns["NAME1"].DisplayIndex = 3;
 
             foreach (DataGridViewColumn col in dgvProduct.Columns)
             {
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 col.HeaderCell.Style.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Pixel);
-            }
-        }*/
+            }*/
+        }
+
+        private void pbxSearch_Click(object sender, EventArgs e)
+        {
+           /* string optionForm = "UserForm";
+            string optionString = "name";
+
+            Search search = new Search();
+            dgvProduct.DataSource = search.SearchFilter(connectionString, tbxSearch.Text, optionString, optionForm);
+
+            tbxSearch.Text = "";*/
     }
+}
 }

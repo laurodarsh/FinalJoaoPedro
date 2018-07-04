@@ -23,5 +23,10 @@ namespace ProjetoFinal.Forms
             hf.Show();
             this.Hide();
         }
+
+        private void pbxSearch_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
