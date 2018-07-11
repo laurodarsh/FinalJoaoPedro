@@ -14,6 +14,7 @@ namespace ProjetoFinal.Forms
     public partial class ProfileAllForm : Form
     {
         string connectionString = "workstation id=StockControlData.mssql.somee.com;packet size=4096;user id=luacademy_SQLLogin_1;pwd=msctq6gvt3;data source=StockControlData.mssql.somee.com;persist security info=False;initial catalog=StockControlData";
+
         public ProfileAllForm()
         {
             InitializeComponent();
@@ -23,7 +24,8 @@ namespace ProjetoFinal.Forms
 
         private void pbxEdit_Click(object sender, EventArgs e)
         {
-            ProfileDetailsForm pd = new ProfileDetailsForm();
+            int idProfile = Int32.Parse(dgvProfile.SelectedRows[0].Cells[0].Value.ToString());
+            ProfileDetailsForm pd = new ProfileDetailsForm(idProfile);
             pd.Show();
             this.Hide();
         }
@@ -38,7 +40,33 @@ namespace ProjetoFinal.Forms
 
         private void pbxDelete_Click(object sender, EventArgs e)
         {
+            int idProfile = Int32.Parse(dgvProfile.SelectedRows[0].Cells[0].Value.ToString());
 
+            SqlConnection sqlConnect = new SqlConnection(connectionString);
+
+            try
+            {
+                sqlConnect.Open();
+                string sql = "UPDATE USER_PROFILE SET ACTIVE = @active WHERE ID = @id";
+
+                SqlCommand cmd = new SqlCommand(sql, sqlConnect);
+
+                cmd.Parameters.Add(new SqlParameter("@id", idProfile));
+                cmd.Parameters.Add(new SqlParameter("@active", false));
+
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Perfil inativo!");
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show("Erro ao editar este perfil!" + "\n\n" + Ex.Message);
+                throw;
+            }
+            finally
+            {
+                sqlConnect.Close();
+            }
         }
 
         private void pbxBack_Click(object sender, EventArgs e)

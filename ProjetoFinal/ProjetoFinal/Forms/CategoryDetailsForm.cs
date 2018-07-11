@@ -21,7 +21,7 @@ namespace ProjetoFinal.Forms
         {
             InitializeComponent();
 
-           /* lbl.Text = idUser.ToString(); //-------
+            lblId.Text = idCategory.ToString(); //-------
 
             SqlConnection sqlConnect = new SqlConnection(connectionString);
 
@@ -57,16 +57,6 @@ namespace ProjetoFinal.Forms
                     cbxActive.Checked = category.Active;
 
 
-                    //Busca o index baseado no Select
-                    //int indexCombo = 0;
-                    //if (user.UserProfile != null)
-                    //{
-                    //  indexCombo = user.UserProfile.Id;
-                    //}
-
-                    //Inicializa o dropDown com as informações do banco
-                    //InitializeComboBox(cbxProfile, indexCombo);
-
                 }
                 catch (Exception EX)
                 {
@@ -78,11 +68,13 @@ namespace ProjetoFinal.Forms
                     //Fechar
                     sqlConnect.Close();
                 }
-            }*/
+            }
         }
 
         public CategoryDetailsForm()
         {
+            InitializeComponent();
+            pbxDelete.Visible = false;
         }
 
         private void pbxBack_Click(object sender, EventArgs e)
@@ -130,6 +122,36 @@ namespace ProjetoFinal.Forms
 
         private void pbxDelete_Click(object sender, EventArgs e)
         {
+
+            if (!string.IsNullOrEmpty(lblId.Text)) //-----
+            {
+                SqlConnection sqlConnect = new SqlConnection(connectionString);
+
+
+                try
+                {
+                    sqlConnect.Open();
+                    string sql = "UPDATE CATEGORY SET ACTIVE = @active WHERE ID = @id";
+
+                    SqlCommand cmd = new SqlCommand(sql, sqlConnect);
+
+                    cmd.Parameters.Add(new SqlParameter("@id", lblId.Text));
+                    cmd.Parameters.Add(new SqlParameter("@active", false));
+
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("categoria inativa!");
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show("Erro ao desativar esta categoria!" + "\n\n" + Ex.Message);
+                    throw;
+                }
+                finally
+                {
+                    sqlConnect.Close();
+                }
+            }
 
         }
        void GetData()

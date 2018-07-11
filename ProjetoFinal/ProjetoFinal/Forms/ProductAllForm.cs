@@ -14,6 +14,7 @@ namespace ProjetoFinal.Forms
     public partial class ProductAllForm : Form
     {
         string connectionString = "workstation id=StockControlData.mssql.somee.com;packet size=4096;user id=luacademy_SQLLogin_1;pwd=msctq6gvt3;data source=StockControlData.mssql.somee.com;persist security info=False;initial catalog=StockControlData";
+
         public ProductAllForm()
         {
             InitializeComponent();
@@ -68,7 +69,10 @@ namespace ProjetoFinal.Forms
 
         private void pbxEdit_Click(object sender, EventArgs e)
         {
-            ProductDetailsForm pd = new ProductDetailsForm();
+            int idProduct = Int32.Parse(dgvProduct.SelectedRows[0].Cells[0].Value.ToString());
+
+
+            ProductDetailsForm pd = new ProductDetailsForm(idProduct);
             pd.Show();
             this.Hide();
         }
@@ -80,7 +84,7 @@ namespace ProjetoFinal.Forms
             {
                 sqlConnect.Open();
 
-                SqlCommand cmd = new SqlCommand("SELECT * FROM PRODUCT", sqlConnect);
+                SqlCommand cmd = new SqlCommand("SELECT PRODUCT.ID, PRODUCT.NAME, PRODUCT.ACTIVE, PRODUCT.PRICE, CATEGORY.NAME FROM PRODUCT INNER JOIN CATEGORY ON PRODUCT.FK_PRODUCT = CATEGORY.ID;", sqlConnect);
                 // SqlDataReader reader = cmd.ExecuteReader();
 
                 cmd.ExecuteNonQuery();
@@ -101,8 +105,10 @@ namespace ProjetoFinal.Forms
             }
         }
         private void ResizeDataGridView()
-        {/*
+        {
             dgvProduct.Columns["ID"].Visible = false;
+            dgvProduct.Columns["NAME"].HeaderText = "Nome";
+            dgvProduct.Columns["PRICE"].HeaderText = "Preço";
             dgvProduct.Columns["ACTIVE"].HeaderText = "Ativo";
             dgvProduct.Columns["ACTIVE"].DisplayIndex = 4;
             dgvProduct.Columns["NAME1"].HeaderText = "Categoria";
@@ -112,7 +118,7 @@ namespace ProjetoFinal.Forms
             {
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 col.HeaderCell.Style.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Pixel);
-            }*/
+            }
         }
 
         private void pbxSearch_Click(object sender, EventArgs e)

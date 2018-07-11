@@ -26,6 +26,74 @@ namespace ProjetoFinal.Forms
             cmbCategory.Items.Add("Selecionar Categoria");
             cmbCategory.DisplayMember = "NAME";
             LoadComboBox();
+            pbxDelete.Visible = false;
+        }
+        public ProductDetailsForm(int idProduct)
+        {
+            InitializeComponent();
+            lblId.Text = idProduct.ToString(); //-------
+
+            SqlConnection sqlConnect = new SqlConnection(connectionString);
+
+            if (!string.IsNullOrEmpty(lblId.Text))
+            {
+                try
+                {
+                    //Conectar
+                    sqlConnect.Open();
+
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM PRODUCT WHERE ID = @id", sqlConnect);
+                    //SqlCommand cmd = new SqlCommand("SELECT * FROM CATEGORY WHERE ID = " + idCategory.ToString(), sqlConnect);
+
+                    cmd.Parameters.Add(new SqlParameter("@id", idProduct));
+
+                    Product product = new Product(); //------
+
+                    using (SqlDataReader reader = cmd.ExecuteReader()) //-----
+                    {
+                        while (reader.Read())
+                        {
+                            product.Id = Int32.Parse(reader["ID"].ToString());
+                            product.Name = reader["NAME"].ToString();
+                            product.Active = bool.Parse(reader["ACTIVE"].ToString());
+                            product.Price = float.Parse(reader["PRICE"].ToString());
+                            product.Category = new Category()
+                            {
+                                Id = Int32.Parse(reader["FK_PRODUCT"].ToString())
+                            };
+
+
+
+
+
+                        }
+                    }
+
+                    tbxName.Text = product.Name;
+                    tbxPrice.Text = product.Price.ToString();
+                    cbxActive.Checked = product.Active;
+                    int indexCombo = 0;
+                    if (product.Category != null)
+                    {
+                        indexCombo = product.Category.Id;
+                    }
+                    InitializeComboBox(cmbCategory, indexCombo);
+
+
+                }
+                catch (Exception EX)
+                {
+                    //Tratar exce??es
+                    throw;
+                }
+                finally
+                {
+                    //Fechar
+                    sqlConnect.Close();
+                }
+            }
+
+
         }
 
         private void pbxSave_Click(object sender, EventArgs e)
@@ -98,7 +166,35 @@ namespace ProjetoFinal.Forms
 
         private void pbxDelete_Click(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(lblId.Text)) //-----
+            {
+                SqlConnection sqlConnect = new SqlConnection(connectionString);
 
+
+                try
+                {
+                    sqlConnect.Open();
+                    string sql = "UPDATE PRODUCT SET ACTIVE = @active WHERE ID = @id";
+
+                    SqlCommand cmd = new SqlCommand(sql, sqlConnect);
+
+                    cmd.Parameters.Add(new SqlParameter("@id", lblId.Text));
+                    cmd.Parameters.Add(new SqlParameter("@active", false));
+
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Produto inativo!");
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show("Erro ao desativar este produto!" + "\n\n" + Ex.Message);
+                    throw;
+                }
+                finally
+                {
+                    sqlConnect.Close();
+                }
+            }
         }
 
         void LoadComboBox()
@@ -113,7 +209,7 @@ namespace ProjetoFinal.Forms
                 SqlDataReader reader = sqlCommand.ExecuteReader();
                 while (reader.Read())
                 {
-                    Category c = new Category(reader["NAME"].ToString(), bool.Parse(reader["ACTIVE"].ToString()));
+                    Category c = new Category(reader["NAME"].ToString(), bool.Parse(reader["ACTIVE"].ToString()), Int32.Parse(reader["ID"].ToString()));
                     categories.Add(c);
                 }
             }
@@ -128,6 +224,37 @@ namespace ProjetoFinal.Forms
             foreach (Category c in categories)
             {
                 cmbCategory.Items.Add(c);
+            }
+        }
+        private void InitializeComboBox(ComboBox cbxProduct, int indexCombo)
+        {
+            cbxProduct.Items.Add("Selecione.. ");
+            SqlConnection sqlConnect = new SqlConnection(connectionString);
+
+            try
+            {
+                //Conectar
+                sqlConnect.Open();
+
+                SqlCommand cmd = new SqlCommand("SELECT * FROM CATEGORY", sqlConnect);
+
+                using (SqlDataReader reader = cmd.ExecuteReader()) //-----
+                {
+                    while (reader.Read())
+                    {
+                        cbxProduct.Items.Add(reader["NAME"].ToString());
+                    }
+                }
+
+                cbxProduct.SelectedItem = cbxProduct.Items[indexCombo];
+            }
+            catch (Exception EX)
+            {
+                MessageBox.Show("erro de acesso ao banco de dados. " + EX.Message);
+            }
+            finally
+            {
+                sqlConnect.Close();
             }
         }
     }

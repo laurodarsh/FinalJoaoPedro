@@ -43,6 +43,7 @@
             this.tbxPassConfirm = new System.Windows.Forms.TextBox();
             this.lblProfile = new System.Windows.Forms.Label();
             this.cmbProfile = new System.Windows.Forms.ComboBox();
+            this.lblId = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBack)).BeginInit();
@@ -108,6 +109,7 @@
             this.pbxDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxDelete.TabIndex = 21;
             this.pbxDelete.TabStop = false;
+            this.pbxDelete.Click += new System.EventHandler(this.pbxDelete_Click);
             // 
             // pbxSave
             // 
@@ -182,11 +184,21 @@
             this.cmbProfile.Size = new System.Drawing.Size(121, 21);
             this.cmbProfile.TabIndex = 27;
             // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(237, 157);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(0, 13);
+            this.lblId.TabIndex = 28;
+            this.lblId.Visible = false;
+            // 
             // UserDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.lblId);
             this.Controls.Add(this.cmbProfile);
             this.Controls.Add(this.lblProfile);
             this.Controls.Add(this.tbxPassConfirm);
@@ -230,5 +242,6 @@
         private System.Windows.Forms.TextBox tbxPassConfirm;
         private System.Windows.Forms.Label lblProfile;
         private System.Windows.Forms.ComboBox cmbProfile;
+        private System.Windows.Forms.Label lblId;
     }
 }

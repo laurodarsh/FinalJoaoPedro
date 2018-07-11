@@ -28,6 +28,13 @@ namespace ProjetoFinal.Forms
             cmbProfile.Items.Add("Selecionar o Perfil:");
             cmbProfile.DisplayMember = "NAME";
             LoadComboBox();
+            pbxDelete.Visible = false;
+        }
+        public UserDetailsForm(int idUser)
+        {
+            InitializeComponent();
+
+            
         }
 
         private void pbxBack_Click(object sender, EventArgs e)
@@ -124,5 +131,11 @@ namespace ProjetoFinal.Forms
                 cmbProfile.Items.Add(up);
             }
         }
+
+        private void pbxDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

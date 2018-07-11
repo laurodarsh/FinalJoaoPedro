@@ -30,9 +30,12 @@ namespace ProjetoFinal.Forms
 
         private void pbxEdit_Click(object sender, EventArgs e)
         {
-            UserDetailsForm ud = new UserDetailsForm();
+            int idUser = Int32.Parse(dgvUser.SelectedRows[0].Cells[0].Value.ToString());
+
+            UserDetailsForm ud = new UserDetailsForm(idUser);
             ud.Show();
             this.Hide();
+
         }
 
         private void pbxAdd_Click(object sender, EventArgs e)
@@ -44,6 +47,33 @@ namespace ProjetoFinal.Forms
 
         private void pbxDelete_Click(object sender, EventArgs e)
         {
+            int idUser = Int32.Parse(dgvUser.SelectedRows[0].Cells[0].Value.ToString());
+
+            SqlConnection sqlConnect = new SqlConnection(connectionString);
+
+            try
+            {
+                sqlConnect.Open();
+                string sql = "UPDATE [USER] SET ACTIVE = @active WHERE ID = @id";
+
+                SqlCommand cmd = new SqlCommand(sql, sqlConnect);
+
+                cmd.Parameters.Add(new SqlParameter("@id", idUser));
+                cmd.Parameters.Add(new SqlParameter("@active", false));
+
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Usuário inativo!");
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show("Erro ao editar este usuário!" + "\n\n" + Ex.Message);
+                throw;
+            }
+            finally
+            {
+                sqlConnect.Close();
+            }
 
         }
         
@@ -55,7 +85,8 @@ namespace ProjetoFinal.Forms
             {
                 sqlConnect.Open();
 
-                SqlCommand cmd = new SqlCommand("SELECT * FROM USER", sqlConnect);
+                //SqlCommand cmd = new SqlCommand("SELECT * FROM [USER]", sqlConnect);
+                SqlCommand cmd = new SqlCommand("SELECT [USER].ID, [USER].NAME,[USER].EMAIL,[USER].PASSWORD, [USER].ACTIVE, USER_PROFILE.NAME FROM [USER] INNER JOIN USER_PROFILE ON [USER].FK_USERPROFILE = USER_PROFILE.ID;", sqlConnect);
                 // SqlDataReader reader = cmd.ExecuteReader();
 
                 cmd.ExecuteNonQuery();
@@ -79,7 +110,12 @@ namespace ProjetoFinal.Forms
         {
             dgvUser.Columns["ID"].Visible = false;
             dgvUser.Columns["NAME"].HeaderText = "Nome";
+            dgvUser.Columns["PASSWORD"].Visible = false;
+            dgvUser.Columns["EMAIL"].HeaderText = "Email";
             dgvUser.Columns["ACTIVE"].HeaderText = "Ativo";
+            dgvUser.Columns["ACTIVE"].DisplayIndex = 4;
+            dgvUser.Columns["NAME1"].HeaderText = "Perfil";
+            dgvUser.Columns["NAME1"].DisplayIndex = 3;
 
             foreach (DataGridViewColumn col in dgvUser.Columns)
             {
