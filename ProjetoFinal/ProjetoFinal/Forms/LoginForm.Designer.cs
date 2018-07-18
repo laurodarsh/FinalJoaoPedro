@@ -33,7 +33,6 @@
             this.tbxLogin = new System.Windows.Forms.TextBox();
             this.tbxPass = new System.Windows.Forms.TextBox();
             this.lblSignIn = new System.Windows.Forms.Button();
-            this.lblForgot = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblLogin
@@ -65,13 +64,14 @@
             // 
             this.tbxPass.Location = new System.Drawing.Point(115, 58);
             this.tbxPass.Name = "tbxPass";
+            this.tbxPass.PasswordChar = '*';
             this.tbxPass.Size = new System.Drawing.Size(100, 20);
             this.tbxPass.TabIndex = 3;
             // 
             // lblSignIn
             // 
             this.lblSignIn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblSignIn.Location = new System.Drawing.Point(34, 115);
+            this.lblSignIn.Location = new System.Drawing.Point(115, 113);
             this.lblSignIn.Name = "lblSignIn";
             this.lblSignIn.Size = new System.Drawing.Size(75, 38);
             this.lblSignIn.TabIndex = 4;
@@ -79,22 +79,11 @@
             this.lblSignIn.UseVisualStyleBackColor = true;
             this.lblSignIn.Click += new System.EventHandler(this.lblSignIn_Click);
             // 
-            // lblForgot
-            // 
-            this.lblForgot.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblForgot.Location = new System.Drawing.Point(140, 115);
-            this.lblForgot.Name = "lblForgot";
-            this.lblForgot.Size = new System.Drawing.Size(75, 38);
-            this.lblForgot.TabIndex = 5;
-            this.lblForgot.Text = "Esqueceu senha";
-            this.lblForgot.UseVisualStyleBackColor = true;
-            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.lblForgot);
             this.Controls.Add(this.lblSignIn);
             this.Controls.Add(this.tbxPass);
             this.Controls.Add(this.tbxLogin);
@@ -114,6 +103,5 @@
         private System.Windows.Forms.TextBox tbxLogin;
         private System.Windows.Forms.TextBox tbxPass;
         private System.Windows.Forms.Button lblSignIn;
-        private System.Windows.Forms.Button lblForgot;
     }
 }

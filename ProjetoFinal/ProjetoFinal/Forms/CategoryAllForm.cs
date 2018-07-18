@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetoFinal.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -54,6 +55,7 @@ namespace ProjetoFinal.Forms
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Categoria inativo!");
+                Log.SalvarLog("Deletado Categoria", DateTime.Now);
             }
             catch (Exception Ex)
             {

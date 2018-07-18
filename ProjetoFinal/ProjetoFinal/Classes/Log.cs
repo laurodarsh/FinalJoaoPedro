@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -72,6 +73,23 @@ namespace ProjetoFinal.Classes
             this.Description = description;
             this.Date = date;
             this.Type = type;
+        }
+        public static void SalvarLog(string description, DateTime date)
+        {
+            string connectionString = "workstation id=StockControlData.mssql.somee.com;packet size=4096;user id=luacademy_SQLLogin_1;pwd=msctq6gvt3;data source=StockControlData.mssql.somee.com;persist security info=False;initial catalog=StockControlData";
+
+            SqlConnection sqlConnect = new SqlConnection(connectionString);
+            
+            sqlConnect.Open();
+            string sql = "INSERT INTO LOG (DESCRIPTION, DATE) VALUES (@description, @date)";
+
+            SqlCommand cmd = new SqlCommand(sql, sqlConnect);
+
+            cmd.Parameters.Add(new SqlParameter("@description", description));
+            cmd.Parameters.Add(new SqlParameter("@date", date));
+
+            cmd.ExecuteNonQuery();
+
         }
     }
 }

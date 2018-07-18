@@ -46,11 +46,6 @@ namespace ProjetoFinal.Forms
                             profile.Id = Int32.Parse(reader["ID"].ToString());
                             profile.Name = reader["NAME"].ToString();
                             profile.Active = bool.Parse(reader["ACTIVE"].ToString());
-
-
-
-
-
                         }
                     }
 
@@ -88,35 +83,71 @@ namespace ProjetoFinal.Forms
         private void pbxSave_Click(object sender, EventArgs e)
         {
              SqlConnection sqlConnect = new SqlConnection(connectionString);
-            try
+
+            if (string.IsNullOrEmpty(lblId.Text)) //-----
             {
-                GetData();
+                try
+                {
+                    GetData();
 
-                //Conectar
-                sqlConnect.Open();
-                string sql = "INSERT INTO USER_PROFILE(NAME, ACTIVE) VALUES (@name, @active)";
-               
-                SqlCommand cmd = new SqlCommand(sql, sqlConnect);
+                    //Conectar
+                    sqlConnect.Open();
+                    string sql = "INSERT INTO USER_PROFILE(NAME, ACTIVE) VALUES (@name, @active)";
 
-                cmd.Parameters.Add(new SqlParameter("@name", name));
-                cmd.Parameters.Add(new SqlParameter("@active", active));
+                    SqlCommand cmd = new SqlCommand(sql, sqlConnect);
 
-                cmd.ExecuteNonQuery();
+                    cmd.Parameters.Add(new SqlParameter("@name", name));
+                    cmd.Parameters.Add(new SqlParameter("@active", active));
 
-                MessageBox.Show("Adicionado com sucesso!");
-                
-               
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Adicionado com sucesso!");
+                    Log.SalvarLog("Adicionado Perfil", DateTime.Now);
+
+
+                }
+                catch (Exception ex)
+                {
+                    //Tratar exceções
+                    MessageBox.Show("Erro ao adicionar Perfil!" + ex.Message);
+                    CleanData();
+                }
+                finally
+                {
+                    //Fechar
+                    sqlConnect.Close();
+                }
             }
-            catch (Exception ex)
-            {
-                //Tratar exceções
-                MessageBox.Show("Erro ao adicionar Perfil!" + ex.Message);
-                CleanData();
-            }
-            finally
-            {
-                //Fechar
-                sqlConnect.Close();
+            else {
+               try
+                {
+                    sqlConnect.Open();
+                    string sql = "UPDATE USER_PROFILE SET NAME = @name, ACTIVE = @active WHERE ID= @id";
+
+                    SqlCommand cmd = new SqlCommand(sql, sqlConnect);
+
+                    cmd.Parameters.Add(new SqlParameter("@id", this.lblId.Text));
+                    cmd.Parameters.Add(new SqlParameter("@name", this.tbxName.Text));
+                    cmd.Parameters.Add(new SqlParameter("@active", this.cbxActive.Checked));
+
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Altereções salvas com sucesso!");
+                    Log.SalvarLog("Editado Perfil", DateTime.Now);
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show("Erro ao editar esta perfil!" + "\n\n" + Ex.Message);
+                    throw;
+                }
+                finally
+                {
+                    sqlConnect.Close();
+
+                    ProfileAllForm pa = new ProfileAllForm();
+                    pa.Show();
+                    this.Hide();
+                }
             }
 
         }
@@ -155,6 +186,7 @@ namespace ProjetoFinal.Forms
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Perfil inativa!");
+                    Log.SalvarLog("Deletado Perfil", DateTime.Now);
                 }
                 catch (Exception Ex)
                 {

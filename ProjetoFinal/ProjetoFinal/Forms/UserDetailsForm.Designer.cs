@@ -148,8 +148,10 @@
             // 
             this.tbxPass.Location = new System.Drawing.Point(139, 68);
             this.tbxPass.Name = "tbxPass";
+            this.tbxPass.PasswordChar = '*';
             this.tbxPass.Size = new System.Drawing.Size(100, 20);
             this.tbxPass.TabIndex = 23;
+            this.tbxPass.TextChanged += new System.EventHandler(this.tbxPass_TextChanged);
             // 
             // lblPassConfirm
             // 
@@ -164,6 +166,7 @@
             // 
             this.tbxPassConfirm.Location = new System.Drawing.Point(139, 94);
             this.tbxPassConfirm.Name = "tbxPassConfirm";
+            this.tbxPassConfirm.PasswordChar = '*';
             this.tbxPassConfirm.Size = new System.Drawing.Size(100, 20);
             this.tbxPassConfirm.TabIndex = 25;
             // 

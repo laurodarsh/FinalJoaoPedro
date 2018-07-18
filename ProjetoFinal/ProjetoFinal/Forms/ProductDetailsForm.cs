@@ -33,6 +33,7 @@ namespace ProjetoFinal.Forms
             InitializeComponent();
             lblId.Text = idProduct.ToString(); //-------
 
+            cmbCategory.DisplayMember = "NAME";
             SqlConnection sqlConnect = new SqlConnection(connectionString);
 
             if (!string.IsNullOrEmpty(lblId.Text))
@@ -49,7 +50,7 @@ namespace ProjetoFinal.Forms
 
                     Product product = new Product(); //------
 
-                    using (SqlDataReader reader = cmd.ExecuteReader()) //-----
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {
@@ -99,6 +100,8 @@ namespace ProjetoFinal.Forms
         private void pbxSave_Click(object sender, EventArgs e)
         {
             SqlConnection sqlConnect = new SqlConnection(connectionString);
+            if (string.IsNullOrEmpty(lblId.Text))
+            {
                 try
                 {
                     GetData();
@@ -112,12 +115,13 @@ namespace ProjetoFinal.Forms
                     cmd.Parameters.Add(new SqlParameter("@name", name));
                     cmd.Parameters.Add(new SqlParameter("@price", price));
                     cmd.Parameters.Add(new SqlParameter("@active", active));
-                    cmd.Parameters.Add(new SqlParameter("@category",((Category)cmbCategory.SelectedItem).Id));
+                    cmd.Parameters.Add(new SqlParameter("@category", ((Category)cmbCategory.SelectedItem).Id));
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Adicionado com sucesso!");
+                    Log.SalvarLog("Adicionado Produto", DateTime.Now);
                     CleanData();
-                 
+
                 }
                 catch (Exception ex)
                 {
@@ -129,8 +133,41 @@ namespace ProjetoFinal.Forms
                 {
                     //Fechar
                     sqlConnect.Close();
-                   
+
                 }
+            }else
+            {
+                try
+                {
+                    sqlConnect.Open();
+                    string sql = "UPDATE PRODUCT SET NAME = @name, PRICE = @price, ACTIVE = @active, FK_PRODUCT = @category WHERE ID= @id";
+
+                    SqlCommand cmd = new SqlCommand(sql, sqlConnect);
+
+                    cmd.Parameters.Add(new SqlParameter("@id", this.lblId.Text));
+                    cmd.Parameters.Add(new SqlParameter("@name", this.tbxName.Text));
+                    cmd.Parameters.Add(new SqlParameter("@price", this.tbxPrice.Text));
+                    cmd.Parameters.Add(new SqlParameter("@active", this.cbxActive.Checked));
+                    cmd.Parameters.Add(new SqlParameter("@category", ((Category)cmbCategory.SelectedItem).Id));
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Altereções salvas com sucesso!");
+                    Log.SalvarLog("Editado Produto", DateTime.Now);
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show("Erro ao editar esta categoria!" + "\n\n" + Ex.Message);
+                    throw;
+                }
+                finally
+                {
+                    sqlConnect.Close();
+
+                    ProductAllForm pa = new ProductAllForm();
+                    pa.Show();
+                    this.Hide();
+                }
+            }
 
         }
         void GetData()
@@ -184,6 +221,7 @@ namespace ProjetoFinal.Forms
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Produto inativo!");
+                    Log.SalvarLog("Inativo Produto", DateTime.Now);
                 }
                 catch (Exception Ex)
                 {
@@ -242,11 +280,10 @@ namespace ProjetoFinal.Forms
                 {
                     while (reader.Read())
                     {
-                        cbxProduct.Items.Add(reader["NAME"].ToString());
+                        Category c = new Category(reader["NAME"].ToString(), bool.Parse(reader["ACTIVE"].ToString()), Int32.Parse(reader["ID"].ToString()));
+                        cmbCategory.Items.Add(c);
                     }
                 }
-
-                cbxProduct.SelectedItem = cbxProduct.Items[indexCombo];
             }
             catch (Exception EX)
             {
