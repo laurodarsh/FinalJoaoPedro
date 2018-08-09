@@ -151,7 +151,6 @@
             this.tbxPass.PasswordChar = '*';
             this.tbxPass.Size = new System.Drawing.Size(100, 20);
             this.tbxPass.TabIndex = 23;
-            this.tbxPass.TextChanged += new System.EventHandler(this.tbxPass_TextChanged);
             // 
             // lblPassConfirm
             // 

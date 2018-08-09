@@ -105,23 +105,28 @@ namespace ProjetoFinal.Forms
                 try
                 {
                     GetData();
+                    if (password == confirmpassword)
+                    {
+                        //Conectar
+                        sqlConnect.Open();
+                        string sql = "INSERT INTO [USER](NAME,PASSWORD, EMAIL, ACTIVE, FK_USERPROFILE) VALUES (@name,@password,@email, @active,@userprofile)";
 
-                    //Conectar
-                    sqlConnect.Open();
-                    string sql = "INSERT INTO [USER](NAME,PASSWORD, EMAIL, ACTIVE, FK_USERPROFILE) VALUES (@name,@password,@email, @active,@userprofile)";
+                        SqlCommand cmd = new SqlCommand(sql, sqlConnect);
+                        cmd.Parameters.Add(new SqlParameter("@name", name));
+                        cmd.Parameters.Add(new SqlParameter("@password", password));
+                        cmd.Parameters.Add(new SqlParameter("@email", email));
+                        cmd.Parameters.Add(new SqlParameter("@active", active));
+                        cmd.Parameters.Add(new SqlParameter("@userprofile", ((UserProfile)cmbProfile.SelectedItem).Id));
+                        cmd.ExecuteNonQuery();
 
-                    SqlCommand cmd = new SqlCommand(sql, sqlConnect);
-                    cmd.Parameters.Add(new SqlParameter("@name", name));
-                    cmd.Parameters.Add(new SqlParameter("@password", password));
-                    cmd.Parameters.Add(new SqlParameter("@email", email));
-                    cmd.Parameters.Add(new SqlParameter("@active", active));
-                    cmd.Parameters.Add(new SqlParameter("@userprofile", ((UserProfile)cmbProfile.SelectedItem).Id));
-                    cmd.ExecuteNonQuery();
+                        MessageBox.Show("Adicionado com sucesso!");
+                        Log.SalvarLog("Usuário adicionado", "Adição", DateTime.Now);
 
-                    MessageBox.Show("Adicionado com sucesso!");
-                    Log.SalvarLog("Usuário adicionado","Adição", DateTime.Now);
-
-
+                    }
+                    else
+                    {
+                        MessageBox.Show("Senhas não coincidem");
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -138,6 +143,7 @@ namespace ProjetoFinal.Forms
             else {
                 try
                 {
+                    if (this.tbxPass.Text == this.tbxPassConfirm.Text) { 
                     sqlConnect.Open();
                     string sql = "UPDATE [USER] SET NAME = @name,PASSWORD =@password,EMAIL = @email, ACTIVE = @active, FK_USERPROFILE = @userprofile WHERE ID= @id";
 
@@ -154,6 +160,12 @@ namespace ProjetoFinal.Forms
 
                     MessageBox.Show("Altereções salvas com sucesso!");
                     Log.SalvarLog("Usuário editado","Edição", DateTime.Now);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Senhas não coincidem");
+                    }
                 }
                 catch (Exception Ex)
                 {
@@ -288,11 +300,6 @@ namespace ProjetoFinal.Forms
             {
                 sqlConnect.Close();
             }
-        }
-
-        private void tbxPass_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

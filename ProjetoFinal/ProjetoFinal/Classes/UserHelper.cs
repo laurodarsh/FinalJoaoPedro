@@ -9,7 +9,7 @@ namespace ProjetoFinal.Classes
 {
     public static class UserHelper
     {
-        static string connectionString ="";
+        static string connectionString = "workstation id=StockControlData.mssql.somee.com;packet size=4096;user id=luacademy_SQLLogin_1;pwd=msctq6gvt3;data source=StockControlData.mssql.somee.com;persist security info=False;initial catalog=StockControlData";
 
         public static string Hash(string password)
         {
