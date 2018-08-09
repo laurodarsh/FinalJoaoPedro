@@ -14,16 +14,16 @@ namespace ProjetoFinal
 {
     public partial class HomeForm : Form
     {
-        public HomeForm(/*User user*/)
+        public HomeForm(User user)
         {
             InitializeComponent();
-            /*
-            if(user.Id =! 1)
+            
+            if(user.Id !=1)
             {
                 pbxLog.Visible = false;
                 pbxProfile.Visible = false;
                 pbxUser.Visible = false;
-            }*/
+            }
         }
 
         private void pbxCategory_MouseEnter(object sender, EventArgs e)

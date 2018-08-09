@@ -65,7 +65,7 @@ namespace ProjetoFinal.Forms
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Usuário inativo!");
-                Log.SalvarLog("Deletado Usuário", DateTime.Now);
+                Log.SalvarLog("Usuário desativado","Deleção", DateTime.Now);
             }
             catch (Exception Ex)
             {
@@ -127,14 +127,15 @@ namespace ProjetoFinal.Forms
         }
 
         private void pbxSearch_Click(object sender, EventArgs e)
-        {/*
-            string optionForm = "UserForm";
+        {
+            string optionForm = "UserForm";   
             string optionString = "name";
 
             Search search = new Search();
             dgvUser.DataSource = search.SearchFilter(connectionString, tbxSearch.Text, optionString, optionForm);
-
-            tbxSearch.Text = "";*/
+            
+            //tbxSearch.Text = "";
+        
         }
     }
 }

@@ -119,7 +119,7 @@ namespace ProjetoFinal.Forms
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Adicionado com sucesso!");
-                    Log.SalvarLog("Adicionado Usuário", DateTime.Now);
+                    Log.SalvarLog("Usuário adicionado","Adição", DateTime.Now);
 
 
                 }
@@ -153,7 +153,7 @@ namespace ProjetoFinal.Forms
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Altereções salvas com sucesso!");
-                    Log.SalvarLog("Editado usuário", DateTime.Now);
+                    Log.SalvarLog("Usuário editado","Edição", DateTime.Now);
                 }
                 catch (Exception Ex)
                 {
@@ -243,7 +243,7 @@ namespace ProjetoFinal.Forms
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Usuário inativo!");
-                    Log.SalvarLog("Deletado Usuário", DateTime.Now);
+                    Log.SalvarLog("Usuário desativado","Deleção", DateTime.Now);
                 }
                 catch (Exception Ex)
                 {

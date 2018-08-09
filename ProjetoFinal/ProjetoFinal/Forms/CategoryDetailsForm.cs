@@ -45,11 +45,6 @@ namespace ProjetoFinal.Forms
                             category.Name = reader["NAME"].ToString();
                             category.Active = bool.Parse(reader["ACTIVE"].ToString());
 
-                            //user.UserProfile = new UserProfile
-                            //{
-                            //Id = Int32.Parse(reader["FK_USER_PROFILE"].ToString())
-                            //};
-
                         }
                     }
 
@@ -104,7 +99,7 @@ namespace ProjetoFinal.Forms
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Adicionado com sucesso!");
-                    Log.SalvarLog("Adicionado Categoria", DateTime.Now);
+                    Log.SalvarLog("Categoria adicionada","Adição", DateTime.Now);
 
 
                 }
@@ -137,7 +132,7 @@ namespace ProjetoFinal.Forms
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Altereções salvas com sucesso!");
-                    Log.SalvarLog("Editado Categoria", DateTime.Now);
+                    Log.SalvarLog("Categoria editada","Edição", DateTime.Now);
                 }
                 catch (Exception Ex)
                 {
@@ -176,7 +171,7 @@ namespace ProjetoFinal.Forms
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("categoria inativa!");
-                    Log.SalvarLog("Deletado Categoria", DateTime.Now);
+                    Log.SalvarLog("Categoria desativada","Deleção", DateTime.Now);
                 }
                 catch (Exception Ex)
                 {

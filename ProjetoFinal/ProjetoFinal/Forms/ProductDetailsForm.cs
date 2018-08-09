@@ -119,14 +119,14 @@ namespace ProjetoFinal.Forms
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Adicionado com sucesso!");
-                    Log.SalvarLog("Adicionado Produto", DateTime.Now);
+                    Log.SalvarLog("Produto adicionado","Adição", DateTime.Now);
                     CleanData();
 
                 }
                 catch (Exception ex)
                 {
                     //Tratar exceções
-                    MessageBox.Show("Erro ao adicionar categoria!" + ex.Message);
+                    MessageBox.Show("Erro ao adicionar produto!" + ex.Message);
                     CleanData();
                 }
                 finally
@@ -152,11 +152,11 @@ namespace ProjetoFinal.Forms
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Altereções salvas com sucesso!");
-                    Log.SalvarLog("Editado Produto", DateTime.Now);
+                    Log.SalvarLog("Produto editado","Edição", DateTime.Now);
                 }
                 catch (Exception Ex)
                 {
-                    MessageBox.Show("Erro ao editar esta categoria!" + "\n\n" + Ex.Message);
+                    MessageBox.Show("Erro ao editar este produto!" + "\n\n" + Ex.Message);
                     throw;
                 }
                 finally
@@ -221,7 +221,7 @@ namespace ProjetoFinal.Forms
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Produto inativo!");
-                    Log.SalvarLog("Inativo Produto", DateTime.Now);
+                    Log.SalvarLog("Produto desativado","Deleção", DateTime.Now);
                 }
                 catch (Exception Ex)
                 {

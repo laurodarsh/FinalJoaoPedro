@@ -49,7 +49,7 @@ namespace ProjetoFinal.Forms
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Produto inativo!");
-                Log.SalvarLog("Deletado Produto", DateTime.Now);
+                Log.SalvarLog("Produto desativado","Deleção", DateTime.Now);
             }
             catch (Exception Ex)
             {
@@ -125,13 +125,13 @@ namespace ProjetoFinal.Forms
 
         private void pbxSearch_Click(object sender, EventArgs e)
         {
-           /* string optionForm = "UserForm";
+            string optionForm = "ProductForm";
             string optionString = "name";
 
             Search search = new Search();
             dgvProduct.DataSource = search.SearchFilter(connectionString, tbxSearch.Text, optionString, optionForm);
 
-            tbxSearch.Text = "";*/
+            tbxSearch.Text = "";
     }
 }
 }

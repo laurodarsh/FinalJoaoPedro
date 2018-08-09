@@ -102,7 +102,7 @@ namespace ProjetoFinal.Forms
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Adicionado com sucesso!");
-                    Log.SalvarLog("Adicionado Perfil", DateTime.Now);
+                    Log.SalvarLog("Perfil adicionado","Adição", DateTime.Now);
 
 
                 }
@@ -133,11 +133,11 @@ namespace ProjetoFinal.Forms
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Altereções salvas com sucesso!");
-                    Log.SalvarLog("Editado Perfil", DateTime.Now);
+                    Log.SalvarLog("Perfil editado","Edição", DateTime.Now);
                 }
                 catch (Exception Ex)
                 {
-                    MessageBox.Show("Erro ao editar esta perfil!" + "\n\n" + Ex.Message);
+                    MessageBox.Show("Erro ao editar este perfil!" + "\n\n" + Ex.Message);
                     throw;
                 }
                 finally
@@ -186,7 +186,7 @@ namespace ProjetoFinal.Forms
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Perfil inativa!");
-                    Log.SalvarLog("Deletado Perfil", DateTime.Now);
+                    Log.SalvarLog("Perfil desativado","Deleção", DateTime.Now);
                 }
                 catch (Exception Ex)
                 {

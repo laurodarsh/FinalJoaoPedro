@@ -58,11 +58,11 @@ namespace ProjetoFinal.Forms
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Perfil inativo!");
-                Log.SalvarLog("Deletado Produto", DateTime.Now);
+                Log.SalvarLog("Perfil desativado","Deleção", DateTime.Now);
             }
             catch (Exception Ex)
             {
-                MessageBox.Show("Erro ao editar este perfil!" + "\n\n" + Ex.Message);
+                MessageBox.Show("Erro ao desativar este perfil!" + "\n\n" + Ex.Message);
                 throw;
             }
             finally
@@ -119,14 +119,14 @@ namespace ProjetoFinal.Forms
         }
 
         private void pbxSearch_Click(object sender, EventArgs e)
-        {/*
-            string optionForm = "UserForm";
+        {
+            string optionForm = "UserProfileForm";
             string optionString = "name";
 
             Search search = new Search();
             dgvProfile.DataSource = search.SearchFilter(connectionString, tbxSearch.Text, optionString, optionForm);
 
-            tbxSearch.Text = "";*/
+            tbxSearch.Text = "";
         }
     }
 }

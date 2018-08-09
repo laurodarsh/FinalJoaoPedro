@@ -24,8 +24,8 @@ namespace ProjetoFinal.Forms
 
         private void pbxBack_Click(object sender, EventArgs e)
         {
-            HomeForm hf = new HomeForm();
-            hf.Show();
+            //HomeForm hf = new HomeForm();
+            //hf.Show();
             this.Hide();
         }
 
@@ -55,11 +55,12 @@ namespace ProjetoFinal.Forms
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Categoria inativo!");
-                Log.SalvarLog("Deletado Categoria", DateTime.Now);
+                Log.SalvarLog("Categoria desativada","Deleção", DateTime.Now);
+                
             }
             catch (Exception Ex)
             {
-                MessageBox.Show("Erro ao editar este categoria!" + "\n\n" + Ex.Message);
+                MessageBox.Show("Erro ao desativar este categoria!" + "\n\n" + Ex.Message);
                 throw;
             }
             finally
@@ -120,14 +121,13 @@ namespace ProjetoFinal.Forms
 
         private void pbxSearch_Click(object sender, EventArgs e)
         {
-            /*    string optionForm = "UserForm";
+                string optionForm = "CategoryForm";
                 string optionString = "name";
 
                 Search search = new Search();
                 dgvCategory.DataSource = search.SearchFilter(connectionString, tbxSearch.Text, optionString, optionForm);
 
                 tbxSearch.Text = "";
-            */
         }
     }
 }
