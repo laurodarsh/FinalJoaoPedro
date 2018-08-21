@@ -124,7 +124,6 @@
             this.lblProduct.Size = new System.Drawing.Size(65, 17);
             this.lblProduct.TabIndex = 5;
             this.lblProduct.Text = "Produtos";
-            this.lblProduct.Visible = false;
             // 
             // lblCategory
             // 
@@ -135,7 +134,6 @@
             this.lblCategory.Size = new System.Drawing.Size(81, 17);
             this.lblCategory.TabIndex = 6;
             this.lblCategory.Text = "Catergorias";
-            this.lblCategory.Visible = false;
             // 
             // lblUser
             // 
@@ -146,7 +144,6 @@
             this.lblUser.Size = new System.Drawing.Size(57, 17);
             this.lblUser.TabIndex = 7;
             this.lblUser.Text = "Usuário";
-            this.lblUser.Visible = false;
             // 
             // lblUserProfile
             // 
@@ -157,7 +154,6 @@
             this.lblUserProfile.Size = new System.Drawing.Size(113, 17);
             this.lblUserProfile.TabIndex = 8;
             this.lblUserProfile.Text = "Perfil de Usuário";
-            this.lblUserProfile.Visible = false;
             // 
             // lblLog
             // 
@@ -168,12 +164,12 @@
             this.lblLog.Size = new System.Drawing.Size(32, 17);
             this.lblLog.TabIndex = 9;
             this.lblLog.Text = "Log";
-            this.lblLog.Visible = false;
             // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(376, 272);
             this.Controls.Add(this.lblLog);
             this.Controls.Add(this.lblUserProfile);
@@ -186,6 +182,7 @@
             this.Controls.Add(this.pbxCategory);
             this.Controls.Add(this.pbxProduct);
             this.Name = "HomeForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
             ((System.ComponentModel.ISupportInitialize)(this.pbxProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCategory)).EndInit();

@@ -18,7 +18,7 @@ namespace ProjetoFinal.Classes
             return Convert.ToBase64String(hashBytes);
         }
 
-        public static User SelectByName(string name)
+     /*   public static User SelectByName(string name)
         {
 
             SqlConnection sqlConnect = new SqlConnection(connectionString);
@@ -59,6 +59,6 @@ namespace ProjetoFinal.Classes
             }
 
             return user;
-        }
+        }*/
     }
 }

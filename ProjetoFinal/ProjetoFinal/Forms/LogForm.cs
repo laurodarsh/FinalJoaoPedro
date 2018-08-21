@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetoFinal.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,6 +30,20 @@ namespace ProjetoFinal.Forms
 
         private void pbxSearch_Click(object sender, EventArgs e)
         {
+            string optionForm = "LogForm";
+            string optionString = "description";
+
+            Search search = new Search();
+            dgvLog.DataSource = search.SearchFilter(connectionString, tbxSearch.Text, optionString, optionForm);
+
+            btnCleanSearch.Visible = true;
+
+            if (tbxSearch.Text == "") {
+                ShowData();
+                ResizeDataGridView();
+                btnCleanSearch.Visible = false;
+            }
+            tbxSearch.Text = "";
 
         }
         private void ShowData()
@@ -72,6 +87,13 @@ namespace ProjetoFinal.Forms
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 col.HeaderCell.Style.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Pixel);
             }
+        }
+
+        private void btnCleanSearch_Click(object sender, EventArgs e)
+        {
+            ShowData();
+            ResizeDataGridView();
+            btnCleanSearch.Visible = false;
         }
     }
 }

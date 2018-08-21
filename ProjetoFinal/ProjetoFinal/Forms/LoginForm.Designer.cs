@@ -90,6 +90,7 @@
             this.Controls.Add(this.lblPass);
             this.Controls.Add(this.lblLogin);
             this.Name = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";
             this.ResumeLayout(false);
             this.PerformLayout();

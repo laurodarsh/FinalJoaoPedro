@@ -176,6 +176,7 @@
             this.Controls.Add(this.lblName);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "ProductDetailsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProductDetailsForm";
             ((System.ComponentModel.ISupportInitialize)(this.pbxDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSave)).EndInit();

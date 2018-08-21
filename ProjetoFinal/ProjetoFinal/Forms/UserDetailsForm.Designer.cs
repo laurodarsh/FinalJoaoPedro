@@ -103,9 +103,9 @@
             // 
             this.pbxDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxDelete.Image = global::ProjetoFinal.Properties.Resources.delete_sign;
-            this.pbxDelete.Location = new System.Drawing.Point(186, 197);
+            this.pbxDelete.Location = new System.Drawing.Point(240, 215);
             this.pbxDelete.Name = "pbxDelete";
-            this.pbxDelete.Size = new System.Drawing.Size(100, 50);
+            this.pbxDelete.Size = new System.Drawing.Size(46, 32);
             this.pbxDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxDelete.TabIndex = 21;
             this.pbxDelete.TabStop = false;
@@ -115,9 +115,9 @@
             // 
             this.pbxSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxSave.Image = global::ProjetoFinal.Properties.Resources.saveIcon;
-            this.pbxSave.Location = new System.Drawing.Point(91, 197);
+            this.pbxSave.Location = new System.Drawing.Point(182, 215);
             this.pbxSave.Name = "pbxSave";
-            this.pbxSave.Size = new System.Drawing.Size(100, 50);
+            this.pbxSave.Size = new System.Drawing.Size(52, 32);
             this.pbxSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxSave.TabIndex = 20;
             this.pbxSave.TabStop = false;
@@ -127,9 +127,9 @@
             // 
             this.pbxBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxBack.Image = global::ProjetoFinal.Properties.Resources.backIcon;
-            this.pbxBack.Location = new System.Drawing.Point(-1, 197);
+            this.pbxBack.Location = new System.Drawing.Point(12, 215);
             this.pbxBack.Name = "pbxBack";
-            this.pbxBack.Size = new System.Drawing.Size(100, 50);
+            this.pbxBack.Size = new System.Drawing.Size(33, 32);
             this.pbxBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxBack.TabIndex = 19;
             this.pbxBack.TabStop = false;
@@ -218,6 +218,7 @@
             this.Controls.Add(this.lblName);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "UserDetailsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UserDetailsForm";
             ((System.ComponentModel.ISupportInitialize)(this.pbxDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSave)).EndInit();

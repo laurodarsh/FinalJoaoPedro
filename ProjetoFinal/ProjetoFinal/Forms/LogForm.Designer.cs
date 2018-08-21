@@ -33,6 +33,7 @@
             this.tbxSearch = new System.Windows.Forms.TextBox();
             this.pbxSearch = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnCleanSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLog)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -62,7 +63,7 @@
             // 
             // tbxSearch
             // 
-            this.tbxSearch.Location = new System.Drawing.Point(75, 12);
+            this.tbxSearch.Location = new System.Drawing.Point(72, 12);
             this.tbxSearch.Name = "tbxSearch";
             this.tbxSearch.Size = new System.Drawing.Size(100, 20);
             this.tbxSearch.TabIndex = 7;
@@ -71,7 +72,7 @@
             // 
             this.pbxSearch.BackgroundImage = global::ProjetoFinal.Properties.Resources.seachIcon;
             this.pbxSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbxSearch.Location = new System.Drawing.Point(188, 12);
+            this.pbxSearch.Location = new System.Drawing.Point(178, 12);
             this.pbxSearch.Name = "pbxSearch";
             this.pbxSearch.Size = new System.Drawing.Size(27, 20);
             this.pbxSearch.TabIndex = 8;
@@ -89,17 +90,31 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // btnCleanSearch
+            // 
+            this.btnCleanSearch.Location = new System.Drawing.Point(207, 8);
+            this.btnCleanSearch.Name = "btnCleanSearch";
+            this.btnCleanSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnCleanSearch.TabIndex = 12;
+            this.btnCleanSearch.Text = "Limpar";
+            this.btnCleanSearch.UseVisualStyleBackColor = false;
+            this.btnCleanSearch.Visible = false;
+            this.btnCleanSearch.Click += new System.EventHandler(this.btnCleanSearch_Click);
+            // 
             // LogForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.btnCleanSearch);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dgvLog);
             this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.pbxSearch);
             this.Controls.Add(this.tbxSearch);
             this.Name = "LogForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LogForm";
             ((System.ComponentModel.ISupportInitialize)(this.dgvLog)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSearch)).EndInit();
@@ -115,5 +130,6 @@
         private System.Windows.Forms.PictureBox pbxSearch;
         private System.Windows.Forms.TextBox tbxSearch;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnCleanSearch;
     }
 }

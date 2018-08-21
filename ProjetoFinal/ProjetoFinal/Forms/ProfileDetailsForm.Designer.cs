@@ -134,6 +134,7 @@
             this.Controls.Add(this.tbxName);
             this.Controls.Add(this.lblName);
             this.Name = "ProfileDetailsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProfileDetailsForm";
             ((System.ComponentModel.ISupportInitialize)(this.pbxDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSave)).EndInit();

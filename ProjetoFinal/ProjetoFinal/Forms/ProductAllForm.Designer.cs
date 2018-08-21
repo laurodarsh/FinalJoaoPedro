@@ -36,6 +36,7 @@
             this.pbxSearch = new System.Windows.Forms.PictureBox();
             this.pbxDelete = new System.Windows.Forms.PictureBox();
             this.pbxEdit = new System.Windows.Forms.PictureBox();
+            this.btnCleanSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAdd)).BeginInit();
@@ -68,7 +69,7 @@
             // 
             // tbxSearch
             // 
-            this.tbxSearch.Location = new System.Drawing.Point(75, 12);
+            this.tbxSearch.Location = new System.Drawing.Point(69, 12);
             this.tbxSearch.Name = "tbxSearch";
             this.tbxSearch.Size = new System.Drawing.Size(100, 20);
             this.tbxSearch.TabIndex = 7;
@@ -102,7 +103,7 @@
             this.pbxSearch.BackgroundImage = global::ProjetoFinal.Properties.Resources.seachIcon;
             this.pbxSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbxSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxSearch.Location = new System.Drawing.Point(188, 12);
+            this.pbxSearch.Location = new System.Drawing.Point(173, 12);
             this.pbxSearch.Name = "pbxSearch";
             this.pbxSearch.Size = new System.Drawing.Size(27, 20);
             this.pbxSearch.TabIndex = 8;
@@ -133,11 +134,23 @@
             this.pbxEdit.TabStop = false;
             this.pbxEdit.Click += new System.EventHandler(this.pbxEdit_Click);
             // 
+            // btnCleanSearch
+            // 
+            this.btnCleanSearch.Location = new System.Drawing.Point(205, 9);
+            this.btnCleanSearch.Name = "btnCleanSearch";
+            this.btnCleanSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnCleanSearch.TabIndex = 15;
+            this.btnCleanSearch.Text = "Limpar";
+            this.btnCleanSearch.UseVisualStyleBackColor = true;
+            this.btnCleanSearch.Visible = false;
+            this.btnCleanSearch.Click += new System.EventHandler(this.btnCleanSearch_Click);
+            // 
             // ProductAllForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.btnCleanSearch);
             this.Controls.Add(this.pbxEdit);
             this.Controls.Add(this.pbxDelete);
             this.Controls.Add(this.pbxBack);
@@ -147,6 +160,7 @@
             this.Controls.Add(this.pbxSearch);
             this.Controls.Add(this.tbxSearch);
             this.Name = "ProductAllForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAdd)).EndInit();
@@ -168,5 +182,6 @@
         private System.Windows.Forms.TextBox tbxSearch;
         private System.Windows.Forms.PictureBox pbxDelete;
         private System.Windows.Forms.PictureBox pbxEdit;
+        private System.Windows.Forms.Button btnCleanSearch;
     }
 }

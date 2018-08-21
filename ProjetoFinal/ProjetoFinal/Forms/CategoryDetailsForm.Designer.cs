@@ -135,6 +135,7 @@
             this.Controls.Add(this.tbxName);
             this.Controls.Add(this.lblName);
             this.Name = "CategoryDetailsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CategoryDetailsForm";
             ((System.ComponentModel.ISupportInitialize)(this.pbxDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSave)).EndInit();

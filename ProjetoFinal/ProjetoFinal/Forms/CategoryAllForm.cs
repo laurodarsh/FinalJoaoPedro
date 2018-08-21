@@ -24,8 +24,6 @@ namespace ProjetoFinal.Forms
 
         private void pbxBack_Click(object sender, EventArgs e)
         {
-            //HomeForm hf = new HomeForm();
-            //hf.Show();
             this.Hide();
         }
 
@@ -127,7 +125,21 @@ namespace ProjetoFinal.Forms
                 Search search = new Search();
                 dgvCategory.DataSource = search.SearchFilter(connectionString, tbxSearch.Text, optionString, optionForm);
 
-                tbxSearch.Text = "";
+            btnCleanSearch.Visible = true;
+            if (tbxSearch.Text == "") {
+                ShowData();
+                ResizeDataGridView();
+                btnCleanSearch.Visible = false;
+            }
+            tbxSearch.Text = "";
+                
+        }
+
+        private void btnCleanSearch_Click(object sender, EventArgs e)
+        {
+            ShowData();
+            ResizeDataGridView();
+            btnCleanSearch.Visible = false;
         }
     }
 }

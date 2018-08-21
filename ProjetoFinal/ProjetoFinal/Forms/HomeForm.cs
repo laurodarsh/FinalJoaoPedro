@@ -14,76 +14,66 @@ namespace ProjetoFinal
 {
     public partial class HomeForm : Form
     {
-        public HomeForm(User user)
+        public HomeForm(/*User user*/)
         {
             InitializeComponent();
             
-            if(user.Id !=1)
+           /* if(user.Id !=1)
             {
                 pbxLog.Visible = false;
                 pbxProfile.Visible = false;
                 pbxUser.Visible = false;
-            }
+            }*/
         }
 
         private void pbxCategory_MouseEnter(object sender, EventArgs e)
         {
-            lblCategory.Visible = true;
-            pbxCategory.BackColor = Color.Turquoise;
+            pbxCategory.BackColor = Color.White;
         }
         
         private void pbxProfile_MouseLeave(object sender, EventArgs e)
         {
-            lblUserProfile.Visible = false;
             pbxProfile.BackColor = Color.Transparent;
         }
 
         private void pbxProfile_MouseEnter(object sender, EventArgs e)
         {
-            lblUserProfile.Visible = true;
-            pbxProfile.BackColor = Color.Tomato;
+            pbxProfile.BackColor = Color.White;
         }
 
         private void pbxCategory_MouseLeave(object sender, EventArgs e)
         {
-            lblCategory.Visible = false;
             pbxCategory.BackColor = Color.Transparent;
         }
 
         private void pbxLog_MouseEnter(object sender, EventArgs e)
         {
-            pbxLog.BackColor = Color.Teal;
-            lblLog.Visible = true;
-        }
+            pbxLog.BackColor = Color.White;
+         }
 
         private void pbxLog_MouseLeave(object sender, EventArgs e)
         {
             pbxLog.BackColor = Color.Transparent;
-            lblLog.Visible = false;
         }
 
         private void pbxProduct_MouseEnter(object sender, EventArgs e)
         {
-            pbxProduct.BackColor = Color.Navy;
-            lblProduct.Visible = true;
+            pbxProduct.BackColor = Color.White;
         }
 
         private void pbxProduct_MouseLeave(object sender, EventArgs e)
         {
             pbxProduct.BackColor = Color.Transparent;
-            lblProduct.Visible = true;
         }
 
         private void pbxUser_MouseEnter(object sender, EventArgs e)
         {
-            pbxUser.BackColor = Color.Plum;
-            lblUser.Visible = true;
+            pbxUser.BackColor = Color.White;
         }
 
         private void pbxUser_MouseLeave(object sender, EventArgs e)
         {
             pbxUser.BackColor = Color.Transparent;
-            lblUser.Visible = false;
         }
 
         private void pbxProduct_Click(object sender, EventArgs e)

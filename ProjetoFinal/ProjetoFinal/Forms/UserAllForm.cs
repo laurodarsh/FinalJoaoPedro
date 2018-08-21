@@ -24,8 +24,6 @@ namespace ProjetoFinal.Forms
 
         private void pbxBack_Click(object sender, EventArgs e)
         {
-            HomeForm h = new HomeForm();
-            h.Show();
             this.Hide();
         }
 
@@ -133,9 +131,22 @@ namespace ProjetoFinal.Forms
 
             Search search = new Search();
             dgvUser.DataSource = search.SearchFilter(connectionString, tbxSearch.Text, optionString, optionForm);
-            
-            //tbxSearch.Text = "";
+            btnCleanSearch.Visible = true;
+            if (tbxSearch.Text == "")
+            {
+                btnCleanSearch.Visible = false;
+                ShowData();
+                ResizeDataGridView();
+            }
+
+            tbxSearch.Text = "";
         
+        }
+
+        private void btnCleanSearch_Click(object sender, EventArgs e)
+        {
+            ShowData();
+            ResizeDataGridView();
         }
     }
 }
