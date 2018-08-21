@@ -118,43 +118,52 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="seachIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\seachicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="categoryIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\categoryicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="userIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\usericon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="productIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\producticon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_301022_200" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\301022-200.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="backIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\backicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="saveIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\saveicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="multiple_users_silhouette_318_49546" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\multiple-users-silhouette_318-49546.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="categoryIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\categoryicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="addIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\addicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="editIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\editicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="productIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\producticon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="download" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\download.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="saveIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\saveicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="delete_sign" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\delete-sign.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="seachIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\seachicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="seachIcon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\seachIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="001" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\001.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="download" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\download.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="log-512" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\log-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_301022_200" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\301022-200.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="editIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\editicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="multiple_users_silhouette_318_49546" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\multiple-users-silhouette_318-49546.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="teste" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\teste.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

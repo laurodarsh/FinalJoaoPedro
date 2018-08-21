@@ -28,92 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pbxProduct = new System.Windows.Forms.PictureBox();
-            this.pbxCategory = new System.Windows.Forms.PictureBox();
-            this.pbxUser = new System.Windows.Forms.PictureBox();
-            this.pbxProfile = new System.Windows.Forms.PictureBox();
-            this.pbxLog = new System.Windows.Forms.PictureBox();
             this.lblProduct = new System.Windows.Forms.Label();
             this.lblCategory = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
             this.lblUserProfile = new System.Windows.Forms.Label();
             this.lblLog = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxProduct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxCategory)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxUser)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxProfile)).BeginInit();
+            this.pbxLog = new System.Windows.Forms.PictureBox();
+            this.pbxProfile = new System.Windows.Forms.PictureBox();
+            this.pbxUser = new System.Windows.Forms.PictureBox();
+            this.pbxCategory = new System.Windows.Forms.PictureBox();
+            this.pbxProduct = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLog)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxProfile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCategory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxProduct)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pbxProduct
-            // 
-            this.pbxProduct.BackgroundImage = global::ProjetoFinal.Properties.Resources.productIcon;
-            this.pbxProduct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbxProduct.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxProduct.Location = new System.Drawing.Point(46, 36);
-            this.pbxProduct.Name = "pbxProduct";
-            this.pbxProduct.Size = new System.Drawing.Size(100, 50);
-            this.pbxProduct.TabIndex = 0;
-            this.pbxProduct.TabStop = false;
-            this.pbxProduct.Click += new System.EventHandler(this.pbxProduct_Click);
-            this.pbxProduct.MouseEnter += new System.EventHandler(this.pbxProduct_MouseEnter);
-            this.pbxProduct.MouseLeave += new System.EventHandler(this.pbxProduct_MouseLeave);
-            // 
-            // pbxCategory
-            // 
-            this.pbxCategory.BackgroundImage = global::ProjetoFinal.Properties.Resources.categoryIcon;
-            this.pbxCategory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbxCategory.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxCategory.Location = new System.Drawing.Point(206, 36);
-            this.pbxCategory.Name = "pbxCategory";
-            this.pbxCategory.Size = new System.Drawing.Size(100, 50);
-            this.pbxCategory.TabIndex = 1;
-            this.pbxCategory.TabStop = false;
-            this.pbxCategory.Click += new System.EventHandler(this.pbxCategory_Click);
-            this.pbxCategory.MouseEnter += new System.EventHandler(this.pbxCategory_MouseEnter);
-            this.pbxCategory.MouseLeave += new System.EventHandler(this.pbxCategory_MouseLeave);
-            // 
-            // pbxUser
-            // 
-            this.pbxUser.BackgroundImage = global::ProjetoFinal.Properties.Resources.userIcon;
-            this.pbxUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbxUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxUser.Location = new System.Drawing.Point(46, 121);
-            this.pbxUser.Name = "pbxUser";
-            this.pbxUser.Size = new System.Drawing.Size(100, 50);
-            this.pbxUser.TabIndex = 2;
-            this.pbxUser.TabStop = false;
-            this.pbxUser.Click += new System.EventHandler(this.pbxUser_Click);
-            this.pbxUser.MouseEnter += new System.EventHandler(this.pbxUser_MouseEnter);
-            this.pbxUser.MouseLeave += new System.EventHandler(this.pbxUser_MouseLeave);
-            // 
-            // pbxProfile
-            // 
-            this.pbxProfile.BackgroundImage = global::ProjetoFinal.Properties.Resources.multiple_users_silhouette_318_49546;
-            this.pbxProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbxProfile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxProfile.Location = new System.Drawing.Point(206, 121);
-            this.pbxProfile.Name = "pbxProfile";
-            this.pbxProfile.Size = new System.Drawing.Size(100, 50);
-            this.pbxProfile.TabIndex = 3;
-            this.pbxProfile.TabStop = false;
-            this.pbxProfile.Click += new System.EventHandler(this.pbxProfile_Click);
-            this.pbxProfile.MouseEnter += new System.EventHandler(this.pbxProfile_MouseEnter);
-            this.pbxProfile.MouseLeave += new System.EventHandler(this.pbxProfile_MouseLeave);
-            // 
-            // pbxLog
-            // 
-            this.pbxLog.BackgroundImage = global::ProjetoFinal.Properties.Resources.download;
-            this.pbxLog.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbxLog.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbxLog.Location = new System.Drawing.Point(123, 195);
-            this.pbxLog.Name = "pbxLog";
-            this.pbxLog.Size = new System.Drawing.Size(100, 50);
-            this.pbxLog.TabIndex = 4;
-            this.pbxLog.TabStop = false;
-            this.pbxLog.Click += new System.EventHandler(this.pbxLog_Click);
-            this.pbxLog.MouseEnter += new System.EventHandler(this.pbxLog_MouseEnter);
-            this.pbxLog.MouseLeave += new System.EventHandler(this.pbxLog_MouseLeave);
             // 
             // lblProduct
             // 
@@ -165,6 +95,78 @@
             this.lblLog.TabIndex = 9;
             this.lblLog.Text = "Log";
             // 
+            // pbxLog
+            // 
+            this.pbxLog.BackgroundImage = global::ProjetoFinal.Properties.Resources.log_512;
+            this.pbxLog.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxLog.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxLog.Location = new System.Drawing.Point(123, 195);
+            this.pbxLog.Name = "pbxLog";
+            this.pbxLog.Size = new System.Drawing.Size(100, 50);
+            this.pbxLog.TabIndex = 4;
+            this.pbxLog.TabStop = false;
+            this.pbxLog.Click += new System.EventHandler(this.pbxLog_Click);
+            this.pbxLog.MouseEnter += new System.EventHandler(this.pbxLog_MouseEnter);
+            this.pbxLog.MouseLeave += new System.EventHandler(this.pbxLog_MouseLeave);
+            // 
+            // pbxProfile
+            // 
+            this.pbxProfile.BackgroundImage = global::ProjetoFinal.Properties.Resources.multiple_users_silhouette_318_49546;
+            this.pbxProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxProfile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxProfile.Image = global::ProjetoFinal.Properties.Resources.teste;
+            this.pbxProfile.Location = new System.Drawing.Point(206, 121);
+            this.pbxProfile.Name = "pbxProfile";
+            this.pbxProfile.Size = new System.Drawing.Size(100, 50);
+            this.pbxProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxProfile.TabIndex = 3;
+            this.pbxProfile.TabStop = false;
+            this.pbxProfile.Click += new System.EventHandler(this.pbxProfile_Click);
+            this.pbxProfile.MouseEnter += new System.EventHandler(this.pbxProfile_MouseEnter);
+            this.pbxProfile.MouseLeave += new System.EventHandler(this.pbxProfile_MouseLeave);
+            // 
+            // pbxUser
+            // 
+            this.pbxUser.BackgroundImage = global::ProjetoFinal.Properties.Resources.userIcon;
+            this.pbxUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxUser.Location = new System.Drawing.Point(46, 121);
+            this.pbxUser.Name = "pbxUser";
+            this.pbxUser.Size = new System.Drawing.Size(100, 50);
+            this.pbxUser.TabIndex = 2;
+            this.pbxUser.TabStop = false;
+            this.pbxUser.Click += new System.EventHandler(this.pbxUser_Click);
+            this.pbxUser.MouseEnter += new System.EventHandler(this.pbxUser_MouseEnter);
+            this.pbxUser.MouseLeave += new System.EventHandler(this.pbxUser_MouseLeave);
+            // 
+            // pbxCategory
+            // 
+            this.pbxCategory.BackgroundImage = global::ProjetoFinal.Properties.Resources.categoryIcon;
+            this.pbxCategory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxCategory.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxCategory.Location = new System.Drawing.Point(206, 36);
+            this.pbxCategory.Name = "pbxCategory";
+            this.pbxCategory.Size = new System.Drawing.Size(100, 50);
+            this.pbxCategory.TabIndex = 1;
+            this.pbxCategory.TabStop = false;
+            this.pbxCategory.Click += new System.EventHandler(this.pbxCategory_Click);
+            this.pbxCategory.MouseEnter += new System.EventHandler(this.pbxCategory_MouseEnter);
+            this.pbxCategory.MouseLeave += new System.EventHandler(this.pbxCategory_MouseLeave);
+            // 
+            // pbxProduct
+            // 
+            this.pbxProduct.BackgroundImage = global::ProjetoFinal.Properties.Resources.productIcon;
+            this.pbxProduct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxProduct.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxProduct.Location = new System.Drawing.Point(46, 36);
+            this.pbxProduct.Name = "pbxProduct";
+            this.pbxProduct.Size = new System.Drawing.Size(100, 50);
+            this.pbxProduct.TabIndex = 0;
+            this.pbxProduct.TabStop = false;
+            this.pbxProduct.Click += new System.EventHandler(this.pbxProduct_Click);
+            this.pbxProduct.MouseEnter += new System.EventHandler(this.pbxProduct_MouseEnter);
+            this.pbxProduct.MouseLeave += new System.EventHandler(this.pbxProduct_MouseLeave);
+            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -184,11 +186,11 @@
             this.Name = "HomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
-            ((System.ComponentModel.ISupportInitialize)(this.pbxProduct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxCategory)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxUser)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxProfile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLog)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxProfile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCategory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxProduct)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

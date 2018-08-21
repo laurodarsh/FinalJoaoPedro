@@ -178,6 +178,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Icons\001.png" />
     <Content Include="Icons\301022-200.png" />
     <Content Include="Icons\addIcon.png" />
     <Content Include="Icons\backIcon.png" />
@@ -185,11 +186,15 @@
     <Content Include="Icons\delete-sign.png" />
     <Content Include="Icons\download.png" />
     <Content Include="Icons\editIcon.png" />
+    <Content Include="Icons\log-512.png" />
     <Content Include="Icons\multiple-users-silhouette_318-49546.jpg" />
     <Content Include="Icons\productIcon.png" />
     <Content Include="Icons\saveIcon.png" />
     <Content Include="Icons\seachIcon.png" />
     <Content Include="Icons\userIcon.png" />
+    <None Include="Resources\teste.png" />
+    <None Include="Resources\001.png" />
+    <None Include="Resources\log-512.png" />
     <None Include="Resources\seachIcon.png" />
   </ItemGroup>
   <ItemGroup>
