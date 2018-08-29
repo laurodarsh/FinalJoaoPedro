@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjetoFinal.Classes
 {
-    class User
+    public class User
     {
         private int id;
         private string name;

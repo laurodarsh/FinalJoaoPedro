@@ -113,7 +113,7 @@ namespace ProjetoFinal.Forms
 
                         SqlCommand cmd = new SqlCommand(sql, sqlConnect);
                         cmd.Parameters.Add(new SqlParameter("@name", name));
-                        cmd.Parameters.Add(new SqlParameter("@password", password));
+                        cmd.Parameters.Add(new SqlParameter("@password", UserHelper.Hash (password)));
                         cmd.Parameters.Add(new SqlParameter("@email", email));
                         cmd.Parameters.Add(new SqlParameter("@active", active));
                         cmd.Parameters.Add(new SqlParameter("@userprofile", ((UserProfile)cmbProfile.SelectedItem).Id));
@@ -151,7 +151,7 @@ namespace ProjetoFinal.Forms
 
                     cmd.Parameters.Add(new SqlParameter("@id", this.lblId.Text));
                     cmd.Parameters.Add(new SqlParameter("@name", this.tbxName.Text));
-                    cmd.Parameters.Add(new SqlParameter("@password", this.tbxPass.Text));
+                    cmd.Parameters.Add(new SqlParameter("@password", UserHelper.Hash(this.tbxPass.Text)));
                     cmd.Parameters.Add(new SqlParameter("@email", this.tbxEmail.Text));
                     cmd.Parameters.Add(new SqlParameter("@active", this.cbxActive.Checked));
                     cmd.Parameters.Add(new SqlParameter("@userprofile", ((UserProfile)cmbProfile.SelectedItem).Id));

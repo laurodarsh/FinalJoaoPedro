@@ -179,7 +179,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icons\001.png" />
-    <Content Include="Icons\301022-200.png" />
+    <Content Include="Icons\logout.png" />
     <Content Include="Icons\addIcon.png" />
     <Content Include="Icons\backIcon.png" />
     <Content Include="Icons\categoryIcon.png" />

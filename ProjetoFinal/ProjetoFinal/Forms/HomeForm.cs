@@ -14,16 +14,20 @@ namespace ProjetoFinal
 {
     public partial class HomeForm : Form
     {
-        public HomeForm(/*User user*/)
+        public HomeForm(User user)
         {
             InitializeComponent();
+            lblHi.Text = "Olá " + user.Name;
             
-           /* if(user.Id !=1)
+            if(user.UserProfile.Id !=3)
             {
                 pbxLog.Visible = false;
                 pbxProfile.Visible = false;
                 pbxUser.Visible = false;
-            }*/
+                lblLog.Visible = false;
+                lblUser.Visible = false;
+                lblUserProfile.Visible = false;
+            }
         }
 
         private void pbxCategory_MouseEnter(object sender, EventArgs e)
@@ -103,6 +107,13 @@ namespace ProjetoFinal
         private void pbxLog_Click(object sender, EventArgs e)
         {
             LogForm l = new LogForm();
+            l.Show();
+        }
+
+        private void pbxLogOut_Click(object sender, EventArgs e)
+        {
+            LoginForm l = new LoginForm();
+            this.Hide();
             l.Show();
         }
     }

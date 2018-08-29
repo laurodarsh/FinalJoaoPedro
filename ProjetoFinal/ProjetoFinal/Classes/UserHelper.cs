@@ -18,7 +18,7 @@ namespace ProjetoFinal.Classes
             return Convert.ToBase64String(hashBytes);
         }
 
-     /*   public static User SelectByName(string name)
+        public static User SelectByName(string name)
         {
 
             SqlConnection sqlConnect = new SqlConnection(connectionString);
@@ -42,7 +42,7 @@ namespace ProjetoFinal.Classes
                         user.Password = reader["PASSWORD"].ToString();
                         user.UserProfile = new UserProfile
                         {
-                            Id = Int32.Parse(reader["FK_USER_PROFILE"].ToString())
+                            Id = Int32.Parse(reader["FK_USERPROFILE"].ToString())
                         };
                     }
                 }
@@ -59,6 +59,6 @@ namespace ProjetoFinal.Classes
             }
 
             return user;
-        }*/
+        }
     }
 }
